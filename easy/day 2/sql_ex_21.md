@@ -1,0 +1,123 @@
+# Product Sales Analysis II
+
+- [Tables for the problem](#tables)
+- [Task](#task)
+- [Description of the Solution](#description-of-the-solution)
+- [Explanation](#explanation)
+- [Schemas & Scripts](#schemas--scripts)
+
+## Tables 
+
+**Table**: `SALES`
+
+| Column Name | Type |
+|-------------|------|
+| sale_id     | int  |
+| product_id  | int  |
+| year        | int  |
+| quantity    | int  |
+| price       | int  |
+
+`(sale_id, year)` is the primary key (combination of columns with unique values) of this table.
+`product_id` is a foreign key (reference column) to `PRODUCT` table.
+Each row of this table shows a sale on the product product_id in a certain year.
+Note that the price is per unit.
+
+**Table**: `PRODUCT`
+
+| Column Name  | Type    |
+|--------------|---------|
+| product_id   | int     |
+| product_name | varchar |
+
+`product_id` is the primary key (column with unique values) of this table.
+Each row of this table indicates the `product name` of each product.
+
+## Task
+
+Write a solution that reports the `total quantity` sold for every `product id`.
+
+**Return** the resulting table in any order.
+
+## Description of the Solution ##
+
+The result format is in the following example.
+
+Example 1:
+
+Input: 
+SALES table:
+
+| sale_id | product_id | year | quantity | price |
+|---------|------------|------|----------|-------|
+| 1       | 100        | 2008 | 10       | 5000  |
+| 2       | 100        | 2009 | 12       | 5000  |
+| 7       | 200        | 2011 | 15       | 9000  |
+
+PRODUCT table:
+
+| product_id | product_name |
+|------------|--------------|
+| 100        | Nokia        |
+| 200        | Apple        |
+| 300        | Samsung      |
+
+Output: 
+
+| product_id | total_quantity |
+|------------|----------------|
+| 100        | 22             |
+| 200        | 15             |
+
+## Explanation ##
+
+No explanation provided.
+
+## Schemas & scripts
+
+### SQL Schema
+
+```genericsql
+-- Create the tables
+Create table If Not Exists Sales (sale_id int, product_id int, year int, quantity int, price int)
+Create table If Not Exists Product (product_id int, product_name varchar(10))
+    
+-- Populate the sales table
+Truncate table Sales
+insert into Sales (sale_id, product_id, year, quantity, price) values ('1', '100', '2008', '10', '5000')
+insert into Sales (sale_id, product_id, year, quantity, price) values ('2', '100', '2009', '12', '5000')
+insert into Sales (sale_id, product_id, year, quantity, price) values ('7', '200', '2011', '15', '9000')
+    
+-- Populate the product table
+Truncate table Product
+insert into Product (product_id, product_name) values ('100', 'Nokia')
+insert into Product (product_id, product_name) values ('200', 'Apple')
+insert into Product (product_id, product_name) values ('300', 'Samsung')
+```
+
+### Pandas Code
+
+```python
+# sales data
+data = [[1, 100, 2008, 10, 5000], 
+        [2, 100, 2009, 12, 5000], 
+        [7, 200, 2011, 15, 9000]]
+
+# sales dataframe
+sales = pd.DataFrame(data, 
+                     columns=['sale_id', 'product_id', 'year', 'quantity', 'price']) \
+                     .astype({'sale_id':'Int64', 
+                              'product_id':'Int64', 
+                              'year':'Int64', 
+                              'quantity':'Int64', 
+                              'price':'Int64'})
+
+# product data
+data = [[100, 'Nokia'], [200, 'Apple'], [300, 'Samsung']]
+
+# product dataframe
+product = pd.DataFrame(data, 
+                       columns=['product_id', 'product_name']) \
+                       .astype({'product_id':'Int64', 
+                                'product_name':'object'})
+```
