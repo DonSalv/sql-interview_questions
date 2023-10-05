@@ -18,4 +18,12 @@
 
 ### SQL Schema
 
+```genericsql
+
+```
+
 ### Pandas Code
+
+```python
+
+```
