@@ -1,0 +1,120 @@
+# Tree Node
+
+- [Tables for the problem](#tables)
+- [Task](#task)
+- [Description of the Solution](#description-of-the-solution)
+- [Explanation](#explanation)
+- [Schemas & Scripts](#schemas--scripts)
+
+## Tables 
+
+**Table**: `TREE`
+
+| Column Name | Type |
+|-------------|------|
+| id          | int  |
+| p_id        | int  |
+
+`id` is the column with unique values for this table.
+
+Each row of this table contains information about the `id` of a node and the `id` of its parent node in a tree.
+
+The given structure is always a valid tree.
+
+## Task
+
+Each node in the tree can be one of three types:
+
+- `"Leaf"`: if the node is a leaf node.
+- `"Root"`: if the node is the root of the tree.
+- `"Inner"`: If the node is neither a leaf node nor a root node.
+
+Write a solution to report the type of each node in the tree.
+
+**Return** the result table in any order.
+
+## Description of the Solution ##
+
+The result format is in the following example.
+
+Example 1:
+
+![Alt text](../../data/tree1.jpg "Tree example 1")
+
+Input: 
+TREE table:
+
+| id  | p_id |
+|-----|------|
+| 1   | null |
+| 2   | 1    |
+| 3   | 1    |
+| 4   | 2    |
+| 5   | 2    |
+
+Output: 
+
+| id  | type  |
+|-----|-------|
+| 1   | Root  |
+| 2   | Inner |
+| 3   | Leaf  |
+| 4   | Leaf  |
+| 5   | Leaf  |
+
+Example 2:
+
+![Alt text](../../data/tree2.jpg "Tree example 2")
+
+Input: 
+TREE table:
+
+| id  | p_id |
+|-----|------|
+| 1   | null |
+
+Output: 
+
+| id  | type |
+|-----|------|
+| 1   | Root |
+
+
+## Explanation ##
+
+Explanation 1: 
+- Node `1` is the root node because its parent node is null and it has child nodes `2` and `3`.
+- Node `2` is an inner node because it has parent node `1` and child node `4` and `5`.
+- Nodes `3,` `4`, and `5` are leaf nodes because they have parent nodes and they do not have child nodes.
+
+Explanation 2: 
+- If there is only one node on the tree, you only need to output its root attributes.
+
+## Schemas & scripts
+
+### SQL Schema
+
+```genericsql
+-- Create the tree table
+Create table If Not Exists Tree (id int, p_id int)
+
+-- Populate the tree table    
+Truncate table Tree
+insert into Tree (id, p_id) values ('1', 'None')
+insert into Tree (id, p_id) values ('2', '1')
+insert into Tree (id, p_id) values ('3', '1')
+insert into Tree (id, p_id) values ('4', '2')
+insert into Tree (id, p_id) values ('5', '2')
+```
+
+### Pandas Code
+
+```python
+# tree data
+data = [[1, None], [2, 1], [3, 1], [4, 2], [5, 2]]
+
+# tree dataframe
+tree = pd.DataFrame(data, 
+                    columns=['id', 'p_id']) \
+                   .astype({'id':'Int64', 'p_id':'Int64'})
+```
