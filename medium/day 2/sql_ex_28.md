@@ -10,11 +10,11 @@
 
 **Table**: `PRODUCTS`
 
-| Column Name   | Type    |
-
-| product_id    | int     |
-| new_price     | int     |
-| change_date   | date    |
+| Column Name | Type |
+|-------------|------|
+| product_id  | int  |
+| new_price   | int  |
+| change_date | date |
 
 `(product_id, change_date)` is the primary key (combination of columns with unique values) of this table.
 
