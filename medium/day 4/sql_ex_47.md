@@ -39,7 +39,7 @@ The result format is in the following table.
 
 Example 1:
 
-![Alt text](../data/rect.png "Rectangle")
+![Alt text](../../data/rect.png "Rectangle")
 
 Input: 
 POINTS table:
