@@ -1,5 +1,13 @@
 # SQL Interview Exercises
 
+The repository with the SQL module exercises.
+
+1. [Introduction](#introduction)
+2. [Description](#description)
+3. [Requirements](#requirements)
+4. [Usage](#usage)
+5. [Troubles](#troubles-and-mistakes)
+
 ## Introduction
 
 This repository has the set of coding exercises for the SQL module. The exercises are divided into three sections 
