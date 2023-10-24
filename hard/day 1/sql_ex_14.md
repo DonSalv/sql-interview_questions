@@ -55,7 +55,7 @@ The result table will contain two columns:
 
 The result format is in the following example.
 
-![Alt text](../data/chart.png "the chart")
+![Alt text](../../data/chart.png "the chart")
 
 Example 1:
 
