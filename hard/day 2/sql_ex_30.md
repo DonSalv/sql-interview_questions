@@ -11,7 +11,7 @@
 **Table**: `BUSES`
 
 | Column Name  | Type |
-
+|--------------|------|
 | bus_id       | int  |
 | arrival_time | int  |
 | capacity     | int  |
