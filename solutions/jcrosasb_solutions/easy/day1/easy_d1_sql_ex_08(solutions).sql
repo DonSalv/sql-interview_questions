@@ -12,3 +12,6 @@ insert into Customer (id, name, referee_id) values (6, 'Mark', 2);
 SELECT name 
 FROM Customer 
 WHERE referee_id != 2 OR referee_id is NULL;
+
+-- Drop tables
+DROP TABLE Customer;

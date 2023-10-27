@@ -13,3 +13,6 @@ SELECT email, COUNT(email) AS email_count
     FROM person 
     GROUP BY email 
     HAVING COUNT(email) > 1; 
+
+-- Drop tables
+DROP TABLE Person;

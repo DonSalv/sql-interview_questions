@@ -19,3 +19,6 @@ FROM (SELECT class, COUNT(class) student_number
       FROM Courses 
       GROUP BY class) t 
 WHERE t.student_number >= 5;
+
+-- Drop tables
+DROP TABLE Courses;

@@ -14,3 +14,7 @@ SELECT id
           FROM weather
          ) 
     WHERE dT > 1;
+
+-- Drop tables
+DROP TABLE Weather;
+

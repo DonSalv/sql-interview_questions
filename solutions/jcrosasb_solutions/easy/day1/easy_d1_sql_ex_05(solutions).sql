@@ -23,3 +23,6 @@ DELETE FROM Person
 -- After running your script, the answer shown is the PERSON table. 
 -- The driver will first compile and run your piece of code and then show the PERSON table. The final order of the PERSON table does not matter.
 SELECT * FROM Person;
+
+-- Drop tables
+DROP TABLE Person

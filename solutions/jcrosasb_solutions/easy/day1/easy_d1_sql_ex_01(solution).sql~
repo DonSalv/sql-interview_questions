@@ -27,7 +27,3 @@ INSERT INTO Address (addressId, personId, city, state) VALUES ('2', '3', 'Leetco
 SELECT p.firstName, p.lastName, a.city, a.state 
     FROM person p LEFT JOIN address a 
     ON a.personId = p.personId;
-
--- Delete tables
-DELETE TABLE Person;
-DELETE TABLE Address;

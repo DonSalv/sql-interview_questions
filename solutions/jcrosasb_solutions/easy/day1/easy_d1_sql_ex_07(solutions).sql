@@ -20,3 +20,7 @@ FROM (SELECT e.name, b.bonus
       FROM employee e FULL OUTER JOIN bonus b 
       ON e.empid = b.empid) t 
 WHERE t.bonus < 1000 OR t.bonus IS NULL;
+
+-- Drop tables
+DROP TABLE Employee;
+DROP TABLE Bonus;

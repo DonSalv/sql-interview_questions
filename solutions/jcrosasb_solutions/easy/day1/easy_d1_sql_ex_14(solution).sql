@@ -13,3 +13,6 @@ CASE
     ELSE 'No'
 END Triangle
 FROM Triangle;
+
+-- Drop tables
+DROP TABLE Triangle;

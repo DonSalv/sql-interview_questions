@@ -22,3 +22,7 @@ SELECT c.name
             SELECT o.customerId 
             FROM Orders o
            );
+
+-- Drop tables
+DROP TABLE customers;
+DROP TABLE Orders;

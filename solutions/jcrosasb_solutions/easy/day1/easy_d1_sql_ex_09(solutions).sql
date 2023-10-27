@@ -18,3 +18,6 @@ WHERE order_count = (SELECT MAX(order_count)
                      FROM (SELECT customer_number, COUNT(customer_number) order_count 
                            FROM orders 
                            GROUP BY customer_number));
+
+-- Drop tables
+DROP TABLE orders;

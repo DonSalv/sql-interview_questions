@@ -14,3 +14,6 @@ insert into World (name, continent, area, population, gdp) values ('Angola', 'Af
 SELECT name, population, area 
 FROM World 
 WHERE area > 30000 AND population > 25000000;
+
+-- Drop tables
+DROP TABLE World;
