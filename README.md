@@ -54,7 +54,7 @@ For each exercise, an `md` file has been created with the following structure:
     
     - **Pandas Code**
     
-       The code to generate the tables and schema in in python using pandas dataframes.
+       The code to generate the tables and schema in python using pandas dataframes.
 
 ## Requirements
 
@@ -65,7 +65,7 @@ For each exercise, an `md` file has been created with the following structure:
 
 2. **Oracle SQLdeveloper**
 
-    If you installed the Oracle Database in your computer, you need [Oracle SQL Developer)(https://www.oracle.com/database/sqldeveloper/)
+    If you installed the Oracle Database in your computer, you need [Oracle SQL Developer](https://www.oracle.com/database/sqldeveloper/)
     to work with the database.
 
 3. **(Optional) Python environment**
@@ -103,7 +103,7 @@ This is a Git repository and version control is expected. Follow the steps to su
 1. Clone the repository to your local.
 2. Create a new branch from the `master` branch and name it `<USER>_solutions`.
 3. Work on your branch. Make regular commits to your branch.
-4. Create a direcorty inside the `solutions` folder with the name `<USER>`. This directory is your working directory. 
+4. Create a directory inside the `solutions` folder with the name `<USER>`. This directory is your working directory. 
 Observe this to make easy the collaboration among co-workers.
 5. `PUSH` your work to the remote repository upon completion of each day work within the sections. 
 For example, `push` your code when you finish the work for `day 2` on `medium` section.
