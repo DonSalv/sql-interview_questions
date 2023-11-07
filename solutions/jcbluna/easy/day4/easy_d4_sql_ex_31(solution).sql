@@ -1,5 +1,5 @@
 -- Create the activity table
-CREATE TABLE Activity (user_id int, session_id int, activity_date date, activity_type varchar(20) CHECK(activity_type IN('open_session', 'end_session', 'scroll_down', 'send_message')));
+CREATE TABLE Activity (user_id int, session_id int, activity_date date, activity_type varchar(20) CHECK (activity_type IN ('open_session', 'end_session', 'scroll_down', 'send_message')));
 
 -- Populate the activity table    
 TRUNCATE TABLE Activity;
@@ -17,12 +17,11 @@ INSERT INTO Activity (user_id, session_id, activity_date, activity_type) VALUES 
 
 -- Solve the exercise
 
-SELECT TO_CHAR(activity_date,'YYYY-MM-DD') AS day, COUNT(DISTINCT user_id) AS active_users
+SELECT ROUND(AVG(COUNT(DISTINCT activity_date)),2) AS average_sessions_per_user
 FROM Activity
 WHERE activity_date>=TO_DATE('2019-07-27','%YYYY-%MM-%DD')-30
 AND activity_date<=TO_DATE('2019-07-27','%YYYY-%MM-%DD')
-GROUP BY activity_date;
+GROUP BY user_id;
 
--- Drop unused tables
-
+-- Drop unused table
 DROP TABLE Activity;
