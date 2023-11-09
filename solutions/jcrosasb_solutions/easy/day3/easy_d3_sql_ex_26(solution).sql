@@ -1,4 +1,4 @@
--- To have DATE datatype in proper format                                                                                                                                                                                                                                    
+-- To have DATE datatype in proper format
 ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD'; 
 
 -- Create the tables
