@@ -1,0 +1,99 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 32
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+Table: Views
+    | article_id | author_id | viewer_id | view_date  |
+    | ---------- | --------- | --------- | ---------- |
+    | 1          | 3         | 3         | 2019-08-01 |
+    | 1          | 3         | 6         | 2019-08-02 |
+    | 2          | 7         | 7         | 2019-08-01 |
+    | 2          | 7         | 6         | 2019-08-02 |
+    | 4          | 7         | 1         | 2019-07-22 |
+    | 3          | 4         | 4         | 2019-07-21 |
+    | 3          | 4         | 4         | 2019-07-21 |
+
+Your Output:
+    | ID |
+    | -- |
+    | 4  |
+    | 3  |
+    | 7  |
+
+Expected Output:
+    | id |
+    | -- |
+    | 3  |
+    | 4  |
+    | 7  |
+
+Exercise 33
+Observations: --
+Pass: ✅
+Execution Time: 1456 ms
+Performance: Low
+
+Exercise 37
+Observations: ---
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+    Table: Prices
+    | product_id | start_date | end_date   | price |
+    | ---------- | ---------- | ---------- | ----- |
+    | 1          | 2019-02-17 | 2019-02-28 | 5     |
+    | 1          | 2019-03-01 | 2019-03-22 | 20    |
+    | 2          | 2019-02-01 | 2019-02-20 | 15    |
+    | 2          | 2019-02-21 | 2019-03-31 | 30    |
+    | 3          | 2019-02-21 | 2019-03-31 | 30    |
+
+    Table: UnitsSold
+    | product_id | purchase_date | units |
+    | ---------- | ------------- | ----- |
+    | 1          | 2019-02-25    | 100   |
+    | 1          | 2019-03-01    | 15    |
+    | 2          | 2019-02-10    | 200   |
+    | 2          | 2019-03-22    | 30    |
+
+Your Output:
+    | PRODUCT_ID | AVERAGE_PRICE |
+    | ---------- | ------------- |
+    | 1          | 6.96          |
+    | 2          | 16.96         |
+
+Expected Output:
+    | product_id | average_price |
+    | ---------- | ------------- |
+    | 1          | 6.96          |
+    | 2          | 16.96         |
+    | 3          | 0             |
+
+Exercise 39
+Observations: --
+Pass: ✅
+Execution Time: 1340 ms
+Performance: Standard
+
+Exercise 40
+Observations: --
+Pass: ✅
+Execution Time: 721 ms
+Performance: High
