@@ -29,5 +29,5 @@ SELECT p.firstName, p.lastName, a.city, a.state
     ON a.personId = p.personId;
 
 -- Delete tables
-DELETE TABLE Person;
-DELETE TABLE Address;
+DROP TABLE Person;
+DROP TABLE Address;
