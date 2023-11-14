@@ -1,0 +1,92 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 11
+Observations: --
+Pass: ✅
+Execution Time: 824 ms
+Performance: Standard
+
+Exercise 14
+Observations: The query print "yes" when "Yes" is expected
+Pass: ✅
+Execution Time: 835 ms
+Performance: Standard
+
+Exercise 15
+Observations: --
+Pass: ✅
+Execution Time: 1527 ms
+Performance: Low
+
+Exercise 16
+Observations: --
+Pass: ✅
+Execution Time: 1006 ms
+Performance: Standard
+
+Exercise 17
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail test:
+Input Data:
+    Table: cinema
+    | id | movie | description | rating |
+    | -- | ----- | ----------- | ------ |
+    | 1  | C     | good        | 6.2    |
+    | 2  | A     | fiction     | 8      |
+    | 3  | B     | great       | 9      |
+    | 4  | D     | fantastic   | 4      |
+    | 5  | E     | skytop      | 9.9    |
+    | 6  | F     | topest      | 7      |
+    | 7  | G     | finest      | 9.5    |
+    | 8  | H     | highest     | 9      |
+    | 9  | I     | 3D          | 9.8    |
+
+    Your Output:
+    | ID | MOVIE | DESCRIPTION | RATING |
+    | -- | ----- | ----------- | ------ |
+    | 9  | I     | 3D          | 9.8    |
+    | 7  | G     | finest      | 9.5    |
+    | 5  | E     | skytop      | 9.9    |
+    | 3  | B     | great       | 9      |
+    | 1  | C     | good        | 6.2    |
+
+    Expected Output:
+    | id | movie | description | rating |
+    | -- | ----- | ----------- | ------ |
+    | 5  | E     | skytop      | 9.9    |
+    | 9  | I     | 3D          | 9.8    |
+    | 7  | G     | finest      | 9.5    |
+    | 3  | B     | great       | 9      |
+    | 1  | C     | good        | 6.2    |
+
+Exercise 18
+Observations: --
+Pass: ✅
+Execution Time: 768 ms
+Performance: Standard
+
+Exercise 19
+Observations: --
+Pass: ✅
+Execution Time: 873
+Performance: Standard
+
+Exercise 20
+Observations: --
+Pass: ✅
+Execution Time: 2487 ms
+Performance: Low
