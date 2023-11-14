@@ -1,0 +1,118 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 51
+Observations: --
+Pass: ✅
+Execution Time: 1076
+Performance: High
+
+Exercise 52
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Table Patients
+    | patient_id | patient_name | conditions |
+    | ---------- | ------------ | ---------- |
+    | 1          | Daniel       | SADIAB100  |
+
+Your Output:
+    | PATIENT_ID | PATIENT_NAME | CONDITIONS |
+    | ---------- | ------------ | ---------- |
+    | 1          | Daniel       | SADIAB100  |
+
+Expected Output:
+    | patient_id | patient_name | conditions |
+    | ---------- | ------------ | ---------- |
+
+Exercise 53
+Observations: Observe the output order. Otherwise, the logic works fine.
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 55
+Observations: --
+Pass: ✅
+Execution Time: 1277 ms
+Performance: Standard
+
+Exercise 56
+Observations: --
+Pass: ✅
+Execution Time: 2023 ms
+Performance: Standard
+
+Exercise
+Observations: --
+Pass: ✅
+Execution Time: 1325 ms
+Performance: High
+
+Exercise 58
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+    Table: Customer
+    | customer_id | customer_name |
+    | ----------- | ------------- |
+    | 101         | Alice         |
+    | 102         | Bob           |
+    | 103         | Charles       |
+
+    Table: Orders
+    | order_id | sale_date  | order_cost | customer_id | seller_id |
+    | -------- | ---------- | ---------- | ----------- | --------- |
+    | 1        | 2020-01-05 | 900        | 102         | 3         |
+    | 2        | 2020-01-15 | 700        | 103         | 1         |
+    | 3        | 2020-03-26 | 400        | 102         | 2         |
+    | 4        | 2020-09-22 | 800        | 101         | 3         |
+    | 5        | 2020-04-25 | 900        | 103         | 1         |
+    | 6        | 2019-11-14 | 600        | 103         | 2         |
+    | 7        | 2019-12-29 | 400        | 101         | 1         |
+
+Table: Seller
+    | seller_id | seller_name |
+    | --------- | ----------- |
+    | 1         | Daniel      |
+    | 2         | Elizabeth   |
+    | 3         | Frank       |
+    | 4         | Bruce       |
+
+Use Testcase
+    Your Output:
+    | SELLER_NAME |
+    | ----------- |
+
+Expected Output:
+    | seller_name |
+    | ----------- |
+    | Bruce       |
+
+Exercise 59
+Observations: --
+Pass: ✅
+Execution Time: 2985 ms
+Performance: Standard
+
+Exercise 60
+Observations: --
+Pass: ✅
+Execution Time: 1267 ms
+Performance: Standard
+
