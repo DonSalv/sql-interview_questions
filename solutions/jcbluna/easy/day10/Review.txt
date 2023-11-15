@@ -1,0 +1,47 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 91
+Observations: Check the name of the columns. The logic seems good.
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 92
+Observations: --
+Pass: ✅
+Execution Time: 1221 ms
+Performance: Standard
+
+Exercise 93
+Observations: Check the name of the columns. The logic seems good
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 94
+Observations: --
+Pass: ✅
+Execution Time: 1109 ms
+Performance: Standard
+
+Exercise 95
+Observations: Check the name of the columns. The logic seems good
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 96
+Observations: --
+Pass: ✅
+Execution Time: 869 ms
+Performance: Standard
