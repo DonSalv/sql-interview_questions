@@ -1,0 +1,137 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 51
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Users
+    | user_id | name    | mail                 |
+    | ------- | ------- | -------------------- |
+    | 1       | Winston | winston@leetcode?com |
+
+Your Output:
+    | USER_ID | NAME    | MAIL                 |
+    | ------- | ------- | -------------------- |
+    | 1       | Winston | winston@leetcode?com |
+
+Expected Output:
+    | user_id | name | mail |
+    | ------- | ---- | ---- |
+
+Exercise 52
+Observations: Check the name of the columns.
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Patients
+    | patient_id | patient_name | conditions |
+    | ---------- | ------------ | ---------- |
+    | 1          | Daniel       | SADIAB100  |
+
+Your Output:
+    | PATIENT_ID | PATIENT_NAME | CONDITIONS |
+    | ---------- | ------------ | ---------- |
+    | 1          | Daniel       | SADIAB100  |
+
+Expected Output:
+    | patient_id | patient_name | conditions |
+    | ---------- | ------------ | ---------- |
+
+Exercise 53
+Observations: --
+Pass: ✅
+Execution Time: 863 ms
+Performance: Standard
+
+Exercise 54
+Observations: --
+Pass: ✅
+Execution Time: 1012 ms
+Performance: Top
+
+Exercise 55
+Observations: --
+Pass: ✅
+Execution Time: 1749 ms
+Performance: Low
+
+Exercise 56
+Observations: --
+Pass: ✅
+Execution Time: 1741 ms
+Performance: High
+
+Exercise 57
+Observations: --
+Pass: ✅
+Execution Time: 1358 ms
+Performance: High
+
+Exercise 58
+Observations: --
+Pass: ✅
+Execution Time: 2070 ms
+Performance: Low
+
+Exercise 59
+Observations: --
+Pass: ✅
+Execution Time: 3160 ms
+Performance: Standard
+
+Exercise 60
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Users
+    | user_id | user_name |
+    | ------- | --------- |
+    | 631     | Freida    |
+    | 112     | Rachel    |
+    | 392     | Naftali   |
+    | 674     | Tikvah    |
+    | 543     | Adam      |
+    | 675     | Yehudah   |
+    | 447     | Moshe     |
+    | 784     | Naftali   |
+    | 268     | Freida    |
+
+    Table: Register
+    | contest_id | user_id |
+    | ---------- | ------- |
+    | 187        | 674     |
+    | 187        | 631     |
+    | 187        | 784     |
+    | 187        | 447     |
+
+Your Output:
+    | CONTEST_ID | PERCENTAGE |
+    | ---------- | ---------- |
+    | 187        | 44.44      |
+    | null       | 0          |
+
+Expected Output:
+    | contest_id | percentage |
+    | ---------- | ---------- |
+    | 187        | 44.44      |
