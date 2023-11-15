@@ -24,17 +24,23 @@ insert into Rides (ride_id, user_id, distance) values (10, 14, 25);
 -- If there is a user who hasn't completed any rides, then their distance should be considered as 0. Output the user_id, name and total traveled distance.
 -- Return the result table ordered by user_id in ascending order
 SELECT 
-    r.user_id, 
+    u.user_id, 
     u.name, 
-    (CASE WHEN SUM(r.distance) > 0 THEN SUM(r.distance) ELSE 0 END) traveled_distance 
+    NVL(t.distance, 0) traveled_distance 
 FROM 
-    Rides r 
-FULL OUTER JOIN 
     Users u 
+FULL OUTER JOIN 
+    (SELECT
+	 user_id,
+	 SUM(distance) distance
+     FROM
+	 Rides
+     GROUP BY
+     	 user_id) t 
 ON 
-    u.user_id = r.user_id 
-GROUP BY 
-    r.user_id, u.name;
+    u.user_id = t.user_id 
+ORDER BY 
+    user_id;
 
 -- Drop tables
 DROP TABLE Users;
