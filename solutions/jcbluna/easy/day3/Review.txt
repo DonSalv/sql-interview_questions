@@ -1,0 +1,75 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 21
+Observations: --
+Pass: ✅
+Execution Time: 2096 ms
+Performance: Low
+
+Exercise 22
+Observations: `TO_CHAR` is cumbersome. Avoid hard formatting
+Pass: ✅
+Execution Time: 1055 ms
+Performance: Standard
+
+Exercise 23
+Observations: Write your query without the `FETCH FIRST 1 ROW`
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 24
+Observations: Write your query without the `FETCH NEXT 1 ROW WITH TIES`
+Pass: ⛔
+Execution Time:
+Performance:
+
+Exercise 25
+Observations: --
+Pass: ✅
+Execution Time: 1805 ms
+Performance: Standard
+
+Exercise 26
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test: See fail_case_exercise_26.txt file
+
+Exercise 27
+Observations: --
+Pass: ✅
+Execution Time: 894 ms
+Performance: High
+
+Exercise 28
+Observations: --
+Pass: ✅
+Execution Time: 1508 ms
+Performance: Low
+
+Exercise 29
+Observations: --
+Pass: ✅
+Execution Time: 852 ms
+Performance: Top
+
+Exercise 30
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test: See fail_case_exercise_30.txt file
