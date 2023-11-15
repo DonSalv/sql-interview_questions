@@ -19,14 +19,17 @@ INSERT INTO RequestAccepted (requester_id, accepter_id, accept_date) VALUES ('3'
 INSERT INTO RequestAccepted (requester_id, accepter_id, accept_date) VALUES ('3', '4', TO_DATE('2016/06/10','%YYYY/%MM/%DD'));
 
 -- Solve the exercise
-SELECT COUNT(requester_id)/COUNT(sender_id) AS accept_rate
+-- Catch the zero divisor with a case and round to two decimal places
+SELECT (CASE WHEN COUNT(sender_id)=0 THEN NULL ELSE ROUND(COUNT(requester_id)/COUNT(sender_id),2) END) AS accept_rate
 FROM (
         SELECT DISTINCT sender_id, send_to_id,requester_id, accepter_id
         FROM friendrequest f LEFT OUTER JOIN requestaccepted r
         ON (f.sender_id=r.requester_id AND f.send_to_id=r.accepter_id));
 
+
 -- Grouping by month
-SELECT month,COUNT(requester_id)/COUNT(sender_id) AS accept_rate
+-- Catch the zero divisor with a case and round to two decimal places
+SELECT month,(CASE WHEN COUNT(sender_id)=0 THEN 0 ELSE ROUND(COUNT(requester_id)/COUNT(sender_id),2) END) AS accept_rate
 FROM (
         SELECT DISTINCT sender_id, send_to_id,requester_id, accepter_id, EXTRACT(month FROM request_date) AS month
         FROM friendrequest f LEFT OUTER JOIN requestaccepted r
@@ -34,13 +37,13 @@ FROM (
 GROUP BY month;
 
 -- Grouping by day
-SELECT request_date,COUNT(requester_id)/COUNT(sender_id) AS accept_rate
+-- Catch the zero divisor with a case and round to two decimal places
+SELECT request_date,(CASE WHEN COUNT(sender_id)=0 THEN 0 ELSE ROUND(COUNT(requester_id)/COUNT(sender_id),2) END) AS accept_rate
 FROM (
         SELECT DISTINCT sender_id, send_to_id,requester_id, accepter_id, request_date
         FROM friendrequest f LEFT OUTER JOIN requestaccepted r
         ON (f.sender_id=r.requester_id AND f.send_to_id=r.accepter_id))
 GROUP BY request_date;
-
 
 -- Drop unused tables
 DROP TABLE FriendRequest;

@@ -12,7 +12,8 @@ SELECT MIN(distance) AS shortest
 FROM (
     SELECT ABS(p1.x-p2.x) AS distance
     FROM Point p1 JOIN Point p2
-    WHERE (p1.x!=p2.x));
+    -- Fix the typo WHERE -> ON
+    ON (p1.x!=p2.x));
 
 -- Drop unused tables
 DROP TABLE Point;
