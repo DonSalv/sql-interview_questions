@@ -1,0 +1,21 @@
+-- Create the tables
+Create table if not exists Users(user_id int, name varchar(30))
+Create table if not exists Rides(ride_id int,user_id int, distance int)
+
+-- Populate the users table    
+Truncate table Users
+insert into Users (user_id, name) values (17, 'Addison')
+insert into Users (user_id, name) values (14, 'Ethan')
+insert into Users (user_id, name) values (4, 'Michael')
+insert into Users (user_id, name) values (2, 'Avery')
+insert into Users (user_id, name) values (10, 'Eleanor')
+
+-- Populate the rides table    
+Truncate table Rides
+insert into Rides (ride_id, user_id, distance) values (72, 17, 160)
+insert into Rides (ride_id, user_id, distance) values (42, 14, 161)
+insert into Rides (ride_id, user_id, distance) values (45, 4, 59)
+insert into Rides (ride_id, user_id, distance) values (32, 2, 197)
+insert into Rides (ride_id, user_id, distance) values (15, 4, 357)
+insert into Rides (ride_id, user_id, distance) values (56, 2, 196)
+insert into Rides (ride_id, user_id, distance) values (10, 14, 25)
