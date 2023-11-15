@@ -1,0 +1,264 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 71
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Employee
+    | employee_id | department_id | primary_flag |
+    | ----------- | ------------- | ------------ |
+    | 1           | 1             | N            |
+    | 1           | 2             | N            |
+    | 2           | 1             | Y            |
+    | 2           | 2             | N            |
+    | 3           | 3             | N            |
+    | 4           | 2             | N            |
+    | 4           | 3             | Y            |
+    | 4           | 4             | N            |
+
+Your Output:
+    | EMPLOYEE_ID | DEPARTMENT_ID |
+    | ----------- | ------------- |
+    | 1           | 1             |
+    | 2           | 1             |
+    | 3           | 3             |
+    | 4           | 3             |
+
+Expected Output:
+    | employee_id | department_id |
+    | ----------- | ------------- |
+    | 2           | 1             |
+    | 3           | 3             |
+    | 4           | 3             |
+
+Exercise 74
+Observations: --
+Pass: ✅
+Execution Time: 1320 ms
+Performance: Standard
+
+Exercise 75
+Observations: The output need trimming.
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 76
+Observations: --
+Pass: ✅
+Execution Time: 934 ms
+Performance: Top
+
+Exercise 77
+Observations: --
+Pass: ✅
+Execution Time: 1182 ms
+Performance: Standard
+
+Exercise 78
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Signups
+    | user_id | time_stamp          |
+    | ------- | ------------------- |
+    | 16      | 2020-04-19 04:26:57 |
+    | 12      | 2020-04-05 00:38:03 |
+    | 15      | 2020-09-02 07:27:43 |
+    | 7       | 2020-05-10 04:39:09 |
+    | 6       | 2020-04-04 23:00:07 |
+    | 1       | 2020-01-28 03:41:21 |
+    | 3       | 2020-08-30 16:43:02 |
+    | 18      | 2020-08-28 20:04:13 |
+    | 11      | 2020-02-10 16:46:52 |
+
+    Table: Confirmations
+    | user_id | time_stamp          | action    |
+    | ------- | ------------------- | --------- |
+    | 3       | 2021-07-09 01:37:37 | timeout   |
+    | 12      | 2020-08-10 06:49:26 | confirmed |
+    | 15      | 2020-11-26 03:53:30 | confirmed |
+    | 15      | 2020-04-09 16:28:20 | timeout   |
+    | 1       | 2020-05-16 22:20:24 | timeout   |
+    | 1       | 2020-09-28 06:27:34 | timeout   |
+    | 15      | 2020-04-17 14:32:15 | confirmed |
+    | 16      | 2020-03-29 05:07:21 | timeout   |
+    | 15      | 2020-06-07 12:33:58 | timeout   |
+    | 6       | 2020-04-04 06:09:36 | confirmed |
+    | 7       | 2020-05-17 04:00:18 | timeout   |
+    | 12      | 2020-09-08 13:09:57 | timeout   |
+    | 11      | 2020-09-01 08:47:34 | timeout   |
+    | 3       | 2021-07-23 10:42:58 | timeout   |
+    | 7       | 2020-08-03 08:19:56 | confirmed |
+    | 16      | 2020-10-07 15:30:49 | timeout   |
+    | 12      | 2020-06-01 06:55:54 | confirmed |
+    | 16      | 2020-11-01 22:03:19 | timeout   |
+    | 18      | 2020-10-16 15:50:17 | confirmed |
+    | 3       | 2020-08-22 06:19:19 | timeout   |
+    | 1       | 2020-04-12 23:29:44 | confirmed |
+    | 12      | 2020-11-12 07:43:27 | confirmed |
+    | 12      | 2020-08-21 18:37:12 | timeout   |
+    | 7       | 2020-03-23 08:39:58 | confirmed |
+    | 15      | 2020-12-12 10:54:01 | timeout   |
+    | 6       | 2020-11-02 09:02:54 | timeout   |
+    | 6       | 2020-11-16 21:01:21 | timeout   |
+    | 12      | 2020-06-14 01:57:14 | timeout   |
+    | 1       | 2020-04-02 08:53:15 | confirmed |
+    | 16      | 2020-09-03 23:00:58 | timeout   |
+    | 18      | 2020-10-27 10:06:33 | timeout   |
+    | 6       | 2021-07-12 14:42:40 | confirmed |
+    | 11      | 2020-11-07 11:16:24 | timeout   |
+    | 3       | 2020-01-12 14:54:19 | timeout   |
+    | 1       | 2020-07-06 17:39:03 | timeout   |
+    | 18      | 2020-12-08 13:42:08 | timeout   |
+    | 11      | 2020-05-27 16:22:08 | timeout   |
+    | 11      | 2020-10-23 07:38:41 | timeout   |
+    | 11      | 2020-10-23 19:28:41 | timeout   |
+    | 7       | 2020-06-13 01:19:57 | timeout   |
+    | 1       | 2020-03-27 14:33:06 | timeout   |
+    | 3       | 2020-02-23 20:45:19 | confirmed |
+    | 15      | 2020-06-07 12:55:13 | timeout   |
+    | 18      | 2020-01-23 14:53:58 | timeout   |
+    | 16      | 2020-08-27 10:25:38 | confirmed |
+    | 12      | 2020-05-13 20:18:33 | timeout   |
+
+Your Output:
+    | USER_ID |
+    | ------- |
+
+Expected Output:
+    | user_id |
+    | ------- |
+    | 11      |
+    | 15      |
+
+Exercise 79
+Observations: --
+Pass: ✅
+Execution Time: 997 ms
+Performance: Top
+
+Exercise 80
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Employees
+    | employee_id | name      | manager_id | salary |
+    | ----------- | --------- | ---------- | ------ |
+    | 6           | Daniel    | 55         | 24453  |
+    | 63          | Silas     | 23         | 25661  |
+    | 70          | Renee     | null       | 22613  |
+    | 87          | Cayson    | 77         | 81199  |
+    | 22          | Kali      | 51         | 62305  |
+    | 10          | Noelle    | 68         | 40492  |
+    | 65          | Kenia     | 72         | 25011  |
+    | 83          | Nikolai   | 16         | 33200  |
+    | 85          | Leonidas  | 6          | 15518  |
+    | 12          | Aubree    | 42         | 73668  |
+    | 78          | Franklin  | 54         | 78183  |
+    | 19          | Johnny    | null       | 50229  |
+    | 25          | Moshe     | 32         | 57379  |
+    | 20          | Ahmed     | 17         | 60483  |
+    | 7           | Mathias   | 70         | 15175  |
+    | 15          | Sergio    | null       | 36021  |
+    | 37          | Madison   | 3          | 21068  |
+    | 4           | Marlee    | null       | 12439  |
+    | 57          | Alaina    | 34         | 26393  |
+    | 51          | Baylee    | 11         | 31349  |
+    | 67          | Emmaline  | 63         | 24379  |
+    | 35          | Saul      | 73         | 40336  |
+    | 21          | Adrian    | 44         | 91694  |
+    | 14          | Juniper   | 13         | 36904  |
+    | 50          | Elizabeth | 56         | 42956  |
+    | 72          | Hugo      | 30         | 60847  |
+    | 8           | Alberto   | null       | 92846  |
+    | 58          | Khalil    | null       | 57312  |
+    | 71          | Oliver    | null       | 15728  |
+    | 28          | Brayan    | null       | 2344   |
+    | 56          | Amiyah    | 57         | 46922  |
+    | 53          | Genesis   | 86         | 44938  |
+    | 74          | Ace       | 79         | 69033  |
+    | 1           | Brock     | 84         | 91837  |
+    | 59          | Nadia     | 84         | 77811  |
+    | 49          | Elsie     | 72         | 43247  |
+    | 42          | Laney     | 4          | 46290  |
+    | 48          | Huxley    | 60         | 70945  |
+    | 24          | Violet    | 69         | 64880  |
+    | 31          | Tinley    | null       | 49575  |
+    | 40          | Mavis     | 31         | 15164  |
+    | 29          | Ayden     | 22         | 36279  |
+    | 33          | Harmoni   | 4          | 92741  |
+    | 26          | Amiyah    | 65         | 28228  |
+    | 64          | Conor     | 84         | 11417  |
+    | 9           | Brayan    | 3          | 76697  |
+    | 61          | Xzavier   | 77         | 36427  |
+    | 18          | Heath     | 70         | 12442  |
+    | 44          | Apollo    | 3          | 10089  |
+    | 39          | Nancy     | null       | 72168  |
+    | 41          | Kyleigh   | 37         | 96796  |
+    | 76          | Malia     | 74         | 85616  |
+    | 68          | Lachlan   | 50         | 59160  |
+    | 66          | Kinsley   | 50         | 26491  |
+    | 17          | Isabela   | 13         | 41650  |
+    | 52          | Wilder    | 44         | 75139  |
+    | 11          | Sean      | 63         | 75939  |
+    | 36          | Kamilah   | 44         | 85864  |
+    | 2           | Amora     | 85         | 43871  |
+    | 77          | Noah      | null       | 68394  |
+    | 62          | Tripp     | 69         | 24954  |
+    | 55          | Dorian    | 49         | 1216   |
+    | 46          | Nathaniel | 7          | 61654  |
+    | 69          | Stevie    | 78         | 15758  |
+    | 27          | Isabel    | null       | 74218  |
+    | 75          | Eileen    | 45         | 189    |
+    | 79          | Marie     | 65         | 9630   |
+    | 32          | Cynthia   | 51         | 44677  |
+    | 73          | Azariah   | 5          | 64870  |
+    | 5           | Ace       | null       | 10437  |
+    | 34          | Celeste   | 12         | 24006  |
+    | 16          | Elisabeth | 53         | 63591  |
+    | 30          | Kolton    | null       | 51402  |
+    | 45          | Javier    | 26         | 59973  |
+    | 54          | Thea      | 50         | 77598  |
+    | 82          | Jayla     | null       | 24326  |
+    | 84          | Apollo    | null       | 7004   |
+    | 81          | Veda      | 13         | 67842  |
+    | 38          | Keith     | 73         | 3689   |
+    | 86          | Dakari    | 41         | 79911  |
+
+Your Output:
+    | EMPLOYEE_ID |
+    | ----------- |
+    | 44          |
+    | 37          |
+    | 63          |
+
+Expected Output:
+    | employee_id |
+    | ----------- |
+    | 37          |
+    | 44          |
+    | 63          |
+
