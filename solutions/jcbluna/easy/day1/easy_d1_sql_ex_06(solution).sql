@@ -10,9 +10,14 @@ INSERT INTO Weather (id, recordDate, temperature) VALUES ('4', TO_DATE('2015-01-
 
 -- Solve the exercise
 SELECT id
-FROM (SELECT id, temperature, LAG(temperature,1) OVER (ORDER BY recordDate) AS prev_temperature
+FROM (SELECT id, temperature, 
+        LAG(temperature,1) OVER (ORDER BY recordDate) AS prev_temperature,
+        -- Add a column to check if the days are consecutive
+        recordDate-LAG(recordDate,1) OVER (ORDER BY recordDate) AS diff_days
         FROM Weather)
-WHERE temperature>prev_temperature;
+WHERE temperature>prev_temperature
+-- Include only consecutive days
+AND diff_days=1;
 
 -- Drop unused tables
 DROP TABLE Weather;

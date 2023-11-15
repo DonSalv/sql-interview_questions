@@ -9,11 +9,13 @@ INSERT INTO orders (order_number, customer_number) VALUES ('3', '3');
 INSERT INTO orders (order_number, customer_number) VALUES ('4', '3');
 
 -- Solve the exercise
-SELECT customer_number
+SELECT *
+FROM (SELECT customer_number
 FROM orders
 GROUP BY customer_number
-ORDER BY COUNT(customer_number) DESC
-FETCH NEXT 1 ROW ONLY;
+ORDER BY COUNT(customer_number) DESC)
+-- Solve the exercise without FETCH NEXT
+WHERE ROWNUM=1;
 
 -- Drop unused tables
 DROP TABLE orders;
