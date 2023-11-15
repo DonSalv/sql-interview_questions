@@ -1,0 +1,142 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 41
+Observations: --
+Pass: ✅
+Execution Time: 2262 ms
+Performance: Low
+
+Exercise 42
+Observations: --
+Pass: ✅
+Execution Time: 1402 ms
+Performance: Standard
+
+Exercise 43
+Observations: --
+Pass: ✅
+Execution Time: 1236 ms
+Performance: High
+
+Exercise 44
+Observations: --
+Pass: ✅
+Execution Time: 1741 ms
+Performance: Standard
+
+Exercise 45
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Users
+    | id | name  |
+    | -- | ----- |
+    | 1  | Alice |
+    | 2  | Bob   |
+    | 3  | Alex  |
+    | 19 | Alice |
+
+    Table: Rides
+    | id | user_id | distance |
+    | -- | ------- | -------- |
+    | 1  | 1       | 120      |
+    | 2  | 2       | 317      |
+    | 3  | 3       | 222      |
+    | 4  | 7       | 100      |
+    | 5  | 13      | 312      |
+    | 9  | 7       | 230      |
+
+Your Output:
+    | NAME  | TRAVELLED_DISTANCE |
+    | ----- | ------------------ |
+    | Bob   | 317                |
+    | Alex  | 222                |
+    | Alice | 120                |
+
+Expected Output:
+    | name  | travelled_distance |
+    | ----- | ------------------ |
+    | Bob   | 317                |
+    | Alex  | 222                |
+    | Alice | 120                |
+    | Alice | 0                  |
+
+Exercise 46
+Observations: Attend the name of the columns.
+Pass: ✅
+Execution Time: 1864 ms
+Performance: Low
+
+Exercise 47
+Observations: --
+Pass: ✅
+Execution Time: 883 ms
+Performance: High
+
+Exercise 48
+Observations: Write your query without the LISTAGG(DISTINCT, product, ',') command
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 49
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: TVProgram
+    | program_date     | content_id | channel         |
+    | ---------------- | ---------- | --------------- |
+    | 2020-06-24 12:00 | 5          | Disney Ch       |
+    | 2020-06-25 19:00 | 5          | Disney Ch       |
+    | 2020-05-12 11:00 | 13         | Cartoon Network |
+    | 2020-05-03 09:00 | 4          | Disney Ch       |
+    | 2020-05-04 11:00 | 1          | LC-Channel      |
+    | 2020-07-11 12:00 | 13         | Cartoon Network |
+    | 2020-06-16 09:00 | 1          | LC-Channel      |
+    | 2020-06-20 08:00 | 3          | LC-Channel      |
+
+    Table: Content
+    | content_id | title                | Kids_content | content_type |
+    | ---------- | -------------------- | ------------ | ------------ |
+    | 1          | Leetcode Movie       | N            | Movies       |
+    | 3          | Database Sols        | N            | Series       |
+    | 4          | Aladdin              | Y            | Movies       |
+    | 5          | Cinderela            | Y            | Movies       |
+    | 13         | Courage Cowardly Dog | N            | Series       |
+
+Your Output:
+    | TITLE     |
+    | --------- |
+    | Cinderela |
+    | Cinderela |
+
+Expected Output:
+    | TITLE     |
+    | --------- |
+    | Cinderela |
+
+Exercise 50
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Output: ORA-00904: "C1"."CUSTOMER_ID": invalid identifier
