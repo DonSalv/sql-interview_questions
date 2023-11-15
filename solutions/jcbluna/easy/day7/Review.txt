@@ -1,0 +1,128 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 61
+Observations: --
+Pass: ✅
+Execution Time: 755 ms
+Performance: Standard
+
+Exercise 62
+Observations: -
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+Table: Users
+    | user_id | name      |
+    | ------- | --------- |
+    | 593     | DAlia     |
+    | 944     | FREIda    |
+    | 222     | MaRRy aNN |
+
+Your Output:
+    | USER_ID | NAME      |
+    | ------- | --------- |
+    | 222     | Marry Ann |
+    | 593     | Dalia     |
+    | 944     | Freida    |
+
+Expected Output:
+    | user_id | name      |
+    | ------- | --------- |
+    | 222     | Marry ann |
+    | 593     | Dalia     |
+    | 944     | Freida    |
+
+Exercise 63
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+Table: Product
+    | product_id | name            |
+    | ---------- | --------------- |
+    | 43         | pwmgaomdmaiyqup |
+    | 95         | tdqcxpxbmx      |
+    | 80         | fpfqellka       |
+    | 92         | cxpipdpgym      |
+
+Table: Invoice
+    | invoice_id | product_id | rest | paid | canceled | refunded |
+    | ---------- | ---------- | ---- | ---- | -------- | -------- |
+    | 358        | 92         | 9    | 11   | 47       | 36       |
+    | 416        | 80         | 69   | 5    | 3        | 63       |
+    | 472        | 80         | 52   | 36   | 53       | 75       |
+    | 483        | 80         | 69   | 87   | 9        | 30       |
+    | 63         | 43         | 93   | 26   | 36       | 97       |
+
+Your Output:
+    | NAME            | REST | PAID | CANCELED | REFUNDED |
+    | --------------- | ---- | ---- | -------- | -------- |
+    | cxpipdpgym      | 9    | 11   | 47       | 36       |
+    | fpfqellka       | 190  | 128  | 65       | 168      |
+    | pwmgaomdmaiyqup | 93   | 26   | 36       | 97       |
+
+Expected Output:
+    | name            | rest | paid | canceled | refunded |
+    | --------------- | ---- | ---- | -------- | -------- |
+    | cxpipdpgym      | 9    | 11   | 47       | 36       |
+    | fpfqellka       | 190  | 128  | 65       | 168      |
+    | pwmgaomdmaiyqup | 93   | 26   | 36       | 97       |
+    | tdqcxpxbmx      | 0    | 0    | 0        | 0        |
+
+Exercise 64
+Observations: --
+Pass: ✅
+Execution Time: 1272 ms
+Performance: Low
+
+Exercise 65
+Observations: --
+Pass: ✅
+Execution Time: 1069 ms
+Performance: Standard
+
+Exercise 66
+Observations: --
+Pass: ✅
+Execution Time: 961 ms
+Performance: High
+
+Exercise 67
+Observations: --
+Pass: ✅
+Execution Time: 1227 ms
+Performance: Standard
+
+Exercise 68
+Observations: --
+Pass: ✅
+Execution Time: 1194 ms
+Performance: Standard
+
+Exercise 69
+Observations: --
+Pass: ✅
+Execution Time: 1064 ms
+Performance: Standard
+
+Exercise 70
+Observations: --
+Pass: ✅
+Execution Time: 941 ms
+Performance: Top
