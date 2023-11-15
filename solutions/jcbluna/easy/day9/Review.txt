@@ -1,0 +1,77 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 81
+Observations: --
+Pass: ✅
+Execution Time: 932 ms
+Performance: Standard
+
+Exercise 82
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Output: ORA-00904: "N": invalid identifier
+
+Exercise 83
+Observations: --
+Pass: ✅
+Execution Time: 1029 ms
+Performance: Low
+
+Exercise 84
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Outpur: ORA-01008: not all variables bound
+
+Exercise 85
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Output: ORA-00934: group function is not allowed here
+
+Exercise 86
+Observations: --
+Pass: ✅
+Execution Time: 1195 ms
+Performance: Top
+
+Exercise 87
+Observations: --
+Pass: ✅
+Execution Time: 1211 ms
+Performance: Low
+
+Exercise 88
+Observations: --
+Pass: ✅
+Execution Time: 891 ms
+Performance: Standard
+
+Exercise 89
+Observations: --
+Pass: ✅
+Execution Time: 985 ms
+Performance: Standard
+
+Exercise 90
+Observations: --
+Pass: ✅
+Execution Time: 1056 ms
+Performance: Top
