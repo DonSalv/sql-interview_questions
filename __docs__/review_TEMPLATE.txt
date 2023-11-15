@@ -1,0 +1,36 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise ##
+Observations:
+Pass:
+Execution Time:
+Performance:
+
+-- In case of failing the Test --
+
+Fail Test:
+Input Data:
+Table: <TABLE_NAME>
+    | Column_1 | Column_2 | Column_3 | Column_4  |
+    | -------- | -------- | -------- | --------- |
+    | Val_1    | Val_2    | Val_3    | Val_4     |
+
+Your Output:
+    | Your_column_1 | Your_column_2 |
+    | ------------- | ------------- |
+    | Output_1      | Output_2      |
+
+Expected Output:
+    | Output_column_1 | Output_column_2 |
+    | --------------- | --------------- |
+    | Output_1        | Output_2      |

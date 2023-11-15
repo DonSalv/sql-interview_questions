@@ -1,0 +1,73 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 21
+Observations: --
+Pass: ✅
+Execution Time: 1205 ms
+Performance: Standard
+
+Exercise 22
+Observations: --
+Pass: ✅
+Execution Time: 975
+Performance: High
+
+Exercise 23
+Observations: --
+Pass: ✅
+Execution Time: 1023 ms
+Performance: Top
+
+Exercise 24
+Observations: --
+Pass: ✅
+Execution Time: 1322 ms
+Performance: High
+
+Exercise 25
+Observations: --
+Pass: ✅
+Execution Time: 1539 ms
+Performance: Standard
+
+Exercise 26
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test: See fail_case_exercise_26.txt file
+
+Exercise 27
+Observations: The "first_login" column outputs the date as timestamps. Remove the 00:00:00 from it
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 28
+Observations: --
+Pass: ✅
+Execution Time: 1193 ms
+Performance: Standard
+
+Exercise 29
+Observations: --
+Pass: ✅
+Execution Time: 1255 ms
+Performance: Low
+
+Exercise 30
+Observations: The "day" column outputs the date as timestamps. Remove the 00:00:00 from it
+Pass: ⛔
+Execution Time: --
+Performance: --
