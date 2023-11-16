@@ -28,7 +28,9 @@ INSERT INTO Rides (id, user_id, distance) VALUES ('9', '7', '230');
 SELECT name, NVL(SUM(r.distance),0) AS travelled_distance
 FROM Users u LEFT OUTER JOIN Rides r
 ON(u.id=r.user_id)
-GROUP BY name
+-- Group first by id and then by name to not group people
+-- with the same name
+GROUP BY u.id, name
 ORDER BY travelled_distance DESC, name ASC;
 
 -- Drop unused table

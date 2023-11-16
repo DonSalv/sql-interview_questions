@@ -12,10 +12,13 @@ INSERT INTO Activities (sell_date, product) VALUES (TO_DATE('2020-06-02','%YYYY-
 INSERT INTO Activities (sell_date, product) VALUES (TO_DATE('2020-05-30','%YYYY-%MM-%DD'), 'T-Shirt');
 
 -- Solve the exercise
-SELECT TO_CHAR(sell_date,'YYYY-MM-DD') AS sell_date, COUNT(DISTINCT product) AS num_sold,
-LISTAGG(DISTINCT product,',') WITHIN GROUP (ORDER BY sell_date) AS products
-FROM Activities
-GROUP BY sell_date
+SELECT TO_CHAR(sell_date,'YYYY-MM-DD') AS sell_date, COUNT(product) AS num_sold,
+LISTAGG(product,',') WITHIN GROUP (ORDER BY sell_date,product) AS products
+-- Use the distinct in another query to avoid the combination
+-- LISTAGG (DISTINCT *) and COUNT(DISTINCT *)
+FROM (SELECT DISTINCT sell_date, product
+FROM Activities)
+GROUP BY TO_CHAR(sell_date,'YYYY-MM-DD')
 ORDER BY sell_date;
 
 -- Drop unused table

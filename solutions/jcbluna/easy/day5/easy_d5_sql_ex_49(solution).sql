@@ -20,7 +20,8 @@ INSERT INTO Content (content_id, title, Kids_content, content_type) VALUES ('4',
 INSERT INTO Content (content_id, title, Kids_content, content_type) VALUES ('5', 'Cinderella', 'Y', 'Movies');
 
 -- Solve the exercise
-SELECT title
+-- Use the DISTINCT clause to avoid repeated titles
+SELECT DISTINCT title
 FROM TVProgram t JOIN Content c
 USING(content_id)
 WHERE Kids_content='Y'

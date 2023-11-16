@@ -28,20 +28,18 @@ INSERT INTO Orders (order_id, customer_id, product_id, order_date, quantity) VAL
 INSERT INTO Orders (order_id, customer_id, product_id, order_date, quantity) VALUES ('9', '3', '30', TO_DATE('2020-05-08','%YYYY-%MM-%DD'), '3');
 
 -- Solve the exercise
-SELECT c1.customer_id, c1.name
-FROM Customers c1
-WHERE 100<=ALL (SELECT NVL(total,0)
-            FROM (SELECT 6 AS month FROM dual
-            UNION SELECT 7 FROM dual) m LEFT OUTER JOIN (SELECT EXTRACT(MONTH FROM order_date) AS month, SUM(quantity*price) AS total
-                                                FROM Customers c2 JOIN Orders o
-                                                ON(c2.customer_id=o.customer_id)
-                                                JOIN Product p
-                                                USING(product_id)
-                                                WHERE c2.customer_id=c1.customer_id
-                                                AND EXTRACT(MONTH FROM order_date) IN (6,7)
-                                                AND EXTRACT(YEAR FROM order_date)=2020
-                                                GROUP BY c2.customer_id, EXTRACT(MONTH FROM order_date))
-            USING(month));
+-- Completely new logic without a correlated query
+SELECT customer_id, name FROM
+(SELECT c.customer_id, c.name, (CASE WHEN SUM(quantity*price)>=100 THEN 1 ELSE NULL END) AS months_valid
+FROM Customers c JOIN Orders o
+ON(c.customer_id=o.customer_id)
+JOIN Product p
+ON(p.product_id=o.product_id)
+WHERE TRUNC(order_date,'MM')
+IN (TO_DATE('2020-06','%YYYY-%MM'),TO_DATE('2020-07','%YYYY-%MM'))
+GROUP BY c.customer_id, c.name, TRUNC(order_date,'MM'))
+GROUP BY customer_id, name
+HAVING COUNT(months_valid)=2;
 
 -- Drop unused tables
 DROP TABLE Customers;
