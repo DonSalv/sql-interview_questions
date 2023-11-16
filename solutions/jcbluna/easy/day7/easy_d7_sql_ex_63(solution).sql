@@ -17,9 +17,11 @@ INSERT INTO Invoice (invoice_id, product_id, rest, paid, canceled, refunded) VAL
 INSERT INTO Invoice (invoice_id, product_id, rest, paid, canceled, refunded) VALUES ('4', '1', '1', '1', '1', '0');
 
 -- Solve the exercise
-SELECT name, SUM(rest) AS rest, SUM(paid) AS paid,
-SUM(canceled) AS canceled, SUM(refunded) AS refunded
-FROM Invoice JOIN Product
+-- Sum considering null values as 0's
+SELECT name, SUM(NVL(rest,0)) AS rest, SUM(NVL(paid,0)) AS paid,
+SUM(NVL(canceled,0)) AS canceled, SUM(NVL(refunded,0)) AS refunded
+-- Right outer join to include all the products
+FROM Invoice RIGHT OUTER JOIN Product
 USING(product_id)
 GROUP BY name
 ORDER BY name;
