@@ -24,11 +24,16 @@ INSERT INTO Register (contest_id, user_id) VALUES ('207', '2');
 INSERT INTO Register (contest_id, user_id) VALUES ('210', '7');
 
 -- Solve the exercise
-SELECT DISTINCT r.contest_id, 
+SELECT *
+FROM (SELECT DISTINCT r.contest_id, 
 ROUND(COUNT(r.user_id) OVER (PARTITION BY (r.contest_id))/COUNT(DISTINCT u.user_id) OVER ()*100,2) AS percentage
 FROM Register r RIGHT OUTER JOIN Users u
 ON(r.user_id=u.user_id)
-ORDER BY percentage DESC, contest_id ASC;
+ORDER BY percentage DESC, contest_id ASC)
+-- The nulls appears for users not registered and are
+-- necessary to calculate the percentages, but we need to remove
+-- it at the end.
+WHERE contest_id IS NOT NULL;
 
 -- Drop unused tables
 DROP TABLE Users;

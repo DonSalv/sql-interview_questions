@@ -12,7 +12,10 @@ INSERT INTO Patients (patient_id, patient_name, conditions) VALUES ('5', 'Alain'
 -- Solve the exercise
 SELECT patient_id, patient_id, conditions
 FROM Patients
-WHERE conditions LIKE '%DIAB1%';
+-- Check for words that really starts with DIAB1 (a white space before)
+WHERE conditions LIKE '% DIAB1%'
+-- Or if DIAB1 is at the beginnig of the string
+OR conditions LIKE 'DIAB1%';
 
 -- Drop unused table
 DROP TABLE Patients;

@@ -14,7 +14,9 @@ INSERT INTO Users (user_id, name, mail) VALUES ('7', 'Shapiro', '.shapo@leetcode
 -- Solve the exercise
 SELECT user_id, name, mail
 FROM Users
-WHERE REGEXP_LIKE(mail,'^[a-zA-Z]{1}[a-zA-Z0-9_.-]*@leetcode.com');
+-- Add the escape character to the dot (which in a regex means
+-- that every character is allowed)
+WHERE REGEXP_LIKE(mail,'^[a-zA-Z]{1}[a-zA-Z0-9_.-]*@leetcode\.com');
 
 -- Drop unused tables
 DROP TABLE Users;
