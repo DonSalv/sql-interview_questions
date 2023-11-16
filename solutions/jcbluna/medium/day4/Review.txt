@@ -1,0 +1,137 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 31
+Observations: Rewrite the query avoiding FETCH NEXT 1 ROW ONLY
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 32
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Transactions
+    | id  | country | state    | amount | trans_date |
+    | --- | ------- | -------- | ------ | ---------- |
+    | 100 | CB      | declined | 4000   | 2019-02-04 |
+    | 101 | BB      | approved | 7000   | 2019-02-17 |
+    | 102 | CA      | declined | 6000   | 2019-02-26 |
+    | 103 | AA      | declined | 7000   | 2019-04-01 |
+
+    Table: Chargebacks
+    | trans_id | trans_date |
+    | -------- | ---------- |
+    | 100      | 2019-03-29 |
+    | 102      | 2019-02-28 |
+    | 103      | 2019-05-09 |
+
+Your Output:
+    | MONTH   | COUNTRY | APPROVED_COUNT | APPROVED_AMOUNT | CHARGEBACK_COUNT | CHARGEBACK_AMOUNT |
+    | ------- | ------- | -------------- | --------------- | ---------------- | ----------------- |
+    | 2019-02 | BB      | 1              | 7000            | 0                | 0                 |
+    | 2019-02 | CA      | 0              | 0               | 1                | 6000              |
+    | 2019-02 | CB      | 0              | 0               | 0                | 0                 |
+    | 2019-03 | CB      | 0              | 0               | 1                | 4000              |
+    | 2019-04 | AA      | 0              | 0               | 0                | 0                 |
+    | 2019-05 | AA      | 0              | 0               | 1                | 7000              |
+
+Expected Output:
+    | month   | country | approved_count | approved_amount | chargeback_count | chargeback_amount |
+    | ------- | ------- | -------------- | --------------- | ---------------- | ----------------- |
+    | 2019-02 | BB      | 1              | 7000            | 0                | 0                 |
+    | 2019-03 | CB      | 0              | 0               | 1                | 4000              |
+    | 2019-02 | CA      | 0              | 0               | 1                | 6000              |
+    | 2019-05 | AA      | 0              | 0               | 1                | 7000              |
+
+Exercise 33
+Observations: --
+Pass: ✅
+Execution Time: 1315 ms
+Performance: High
+
+Exercise 34
+Observations: --
+Pass: ✅
+Execution Time: 1190
+Performance: Standard
+
+Exercise 35
+Observations: --
+Pass: ✅
+Execution Time: 1072 ms
+Performance: Low
+
+Exercise 36
+Observations: --
+Pass: ✅
+Execution Time: 923 ms
+Performance: Standard
+
+Exercise 37
+Observations: --
+Pass: ✅
+Execution Time: 1017
+Performance: Low
+
+Exercise 38
+Observations: Check the query
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Output: ORA-00933: SQL command not properly ended
+
+Exercise 39
+Observations: --
+Pass: ✅
+Execution Time: 4506 ms
+Performance: Low
+
+Exercise 40
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Friends
+    | id | name        | activity     |
+    | -- | ----------- | ------------ |
+    | 1  | Maria C.    | Eating       |
+    | 2  | Jade W.     | Horse Riding |
+    | 3  | Jonathan D. | Eating       |
+    | 4  | Claire C.   | Singing      |
+    | 5  | Will W.     | Eating       |
+    | 6  | Anna A.     | Horse Riding |
+    | 7  | Daniel D.   | Singing      |
+
+    Table: Activities
+    | id | name         |
+    | -- | ------------ |
+    | 1  | Eating       |
+    | 2  | Singing      |
+    | 3  | Horse Riding |
+
+Your Output:
+    | ACTIVITY     |
+    | ------------ |
+    | Horse Riding |
+
+Expected Output:
+    | activity |
+    | -------- |
