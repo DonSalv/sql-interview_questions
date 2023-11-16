@@ -17,9 +17,10 @@ INSERT INTO UnitsSold (product_id, purchase_date, units) VALUES ('2', TO_DATE('2
 INSERT INTO UnitsSold (product_id, purchase_date, units) VALUES ('2', TO_DATE('2019-03-22','%YYYY-%MM-%DD'), '30');
 
 -- Solve the exercise
-
-SELECT p.product_id, ROUND(SUM(price*units)/SUM(units),2) AS average_price
-FROM Prices p JOIN UnitsSold u
+-- Make a LEFT OUTER JOIN to include products even if they were not sold
+-- and use NVL to sustitute NULL to 0 in the calculation of the average price
+SELECT p.product_id, NVL(ROUND(SUM(price*units)/SUM(units),2),0) AS average_price
+FROM Prices p LEFT OUTER JOIN UnitsSold u
 ON(p.product_id=u.product_id AND
 u.purchase_date>=p.start_date AND
 p.end_date>=u.purchase_date)
