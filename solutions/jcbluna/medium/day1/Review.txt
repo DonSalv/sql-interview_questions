@@ -1,0 +1,88 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 1
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input data:
+    Table: Employee
+    | id | salary |
+    | -- | ------ |
+    | 1  | 100    |
+    | 2  | 100    |
+
+Your Output:
+    | SECONDHIGHESTSALARY |
+    | ------------------- |
+    | 100                 |
+
+Expected Output:
+    | SecondHighestSalary |
+    | ------------------- |
+
+Exercise 2
+Observations: Review the syntax of the query
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 3
+Observations: The TO_CHAR for formatting is cumbersome
+Pass: ✅
+Execution Time: 848 ms
+Performance: Low
+
+Exercise 4
+Observations: --
+Pass: ✅
+Execution Time: 2142 ms
+Performance: Low
+
+Exercise 5
+Observations: --
+Pass: ✅
+Execution Time: 1423 ms
+Performance: Low
+
+Exercise 6
+Observations: --
+Pass: ✅
+Execution Time: 2109 ms
+Performance: Low
+
+Exercise 7
+Observations: Write the query without the `FETCH NEXT 1 ROW ONLY`
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 8
+Observations: Write the query without the `FETCH NEXT 1 ROW ONLY`
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 9
+Observations: --
+Pass: ✅
+Execution Time: 1654
+Performance: Low
+
+Exercise 10
+Observations: --
+Pass: ✅
+Execution Time: 1631 ms
+Performance: Low
