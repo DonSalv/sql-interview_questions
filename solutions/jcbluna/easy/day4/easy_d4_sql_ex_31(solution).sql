@@ -16,11 +16,12 @@ INSERT INTO Activity (user_id, session_id, activity_date, activity_type) VALUES 
 INSERT INTO Activity (user_id, session_id, activity_date, activity_type) VALUES ('4', '3', TO_DATE('2019-06-25','%YYYY-%MM-%DD'), 'end_session');
 
 -- Solve the exercise
-
-SELECT ROUND(AVG(COUNT(DISTINCT activity_date)),2) AS average_sessions_per_user
+-- Change to count different session id's and not
+-- activity dates
+SELECT ROUND(AVG(COUNT(DISTINCT session_id)),2) AS average_sessions_per_user
 FROM Activity
-WHERE activity_date>=TO_DATE('2019-07-27','%YYYY-%MM-%DD')-30
-AND activity_date<=TO_DATE('2019-07-27','%YYYY-%MM-%DD')
+WHERE activity_date BETWEEN TO_DATE('2019-07-27','%YYYY-%MM-%DD')-30
+    AND TO_DATE('2019-07-27','%YYYY-%MM-%DD')
 GROUP BY user_id;
 
 -- Drop unused table

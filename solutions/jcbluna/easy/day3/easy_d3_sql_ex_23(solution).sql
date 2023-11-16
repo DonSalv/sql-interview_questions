@@ -18,14 +18,17 @@ INSERT INTO Employee (employee_id, name, experience_years) VALUES ('3', 'John', 
 INSERT INTO Employee (employee_id, name, experience_years) VALUES ('4', 'Doe', '2');
 
 -- Solve the exercise
-
 SELECT project_id
 FROM Project
 GROUP BY project_id
-ORDER BY COUNT(employee_id) DESC
-FETCH FIRST 1 ROW;
+HAVING COUNT(employee_id) = (
+-- To avoid the FETCH FIRST we select only the project
+-- that the COUNT of employees is equal to the MAX COUNT
+-- of employees
+SELECT MAX(COUNT(employee_id))
+                            FROM Project
+                            GROUP BY project_id);
 
 -- Drop unused tables
-
 DROP TABLE Project;
 DROP TABLE Employee;

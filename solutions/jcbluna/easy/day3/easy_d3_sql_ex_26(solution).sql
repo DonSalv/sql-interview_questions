@@ -16,8 +16,8 @@ INSERT INTO Sales (seller_id, product_id, buyer_id, sale_date, quantity, price) 
 INSERT INTO Sales (seller_id, product_id, buyer_id, sale_date, quantity, price) VALUES ('3', '3', '4', TO_DATE('2019-05-13','%YYYY-%MM-%DD'), '2', '2800');
 
 -- Solve the exercise
-
-SELECT product_id, product_name
+-- Select only the distinct products (the previous answer does not erase the repeated products)
+SELECT DISTINCT product_id, product_name
 FROM (
         SELECT product_id, product_name, LISTAGG(TO_CHAR(sale_date, 'Q'),' : ') WITHIN GROUP (ORDER BY product_id, product_name) AS quarters
         FROM Sales JOIN Product

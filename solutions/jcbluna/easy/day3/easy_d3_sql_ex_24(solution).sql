@@ -16,12 +16,14 @@ INSERT INTO Sales (seller_id, product_id, buyer_id, sale_date, quantity, price) 
 INSERT INTO Sales (seller_id, product_id, buyer_id, sale_date, quantity, price) VALUES ('3', '3', '4', TO_DATE('2019-05-13','%YYYY-%MM-%DD'), '2', '2800');
 
 -- Solve the exercise
-
 SELECT seller_id
 FROM Sales
 GROUP BY seller_id
-ORDER BY SUM(price) DESC
-FETCH NEXT 1 ROW WITH TIES;
+-- To avoid the FETCH FIRST we select only the sellers
+-- that the SUM of prices is equal to the MAX SUM of prices
+HAVING SUM(price)=(SELECT MAX(SUM(price))
+                FROM Sales
+                GROUP BY seller_id);
 
 -- Drop unused tables
 DROP TABLE Product;
