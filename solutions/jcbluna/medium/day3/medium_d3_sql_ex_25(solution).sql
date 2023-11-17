@@ -24,12 +24,16 @@ INSERT INTO Removals (post_id, remove_date) VALUES ('2', TO_DATE('2019-07-20','%
 INSERT INTO Removals (post_id, remove_date) VALUES ('3', TO_DATE('2019-07-18','%YYYY-%MM-%DD'));
 
 -- Solve the exercise
-SELECT ROUND(AVG(COUNT(remove_date)/COUNT(*)*100),2) AS average_daily_percent
-FROM (SELECT a.post_id, action_date, remove_date
+SELECT ROUND(AVG(COUNT(remove_date)/COUNT(post_id)*100),2) AS average_daily_percent
+-- Select only one entry for a post reported multiple times
+-- with the DISTINCT clause
+FROM (SELECT DISTINCT a.post_id, action_date, remove_date
 FROM Actions a LEFT OUTER JOIN Removals r
 ON(a.post_id=r.post_id)
 WHERE action='report'
 AND extra='spam')
+WHERE remove_date IS NULL
+OR remove_date>action_date
 GROUP BY action_date;
 
 -- Drop unused tables
