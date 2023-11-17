@@ -37,11 +37,13 @@ INSERT INTO California (student_id, score) VALUES ('3', '99');
 
 
 -- Solve the exercise
-SELECT (CASE WHEN n>c THEN 'New York University'
-        WHEN c>n THEN 'California University'
+-- Name the column of both subtables with the counts and reference them in the
+-- CASE Expression
+SELECT (CASE WHEN n.count>c.count THEN 'New York University'
+        WHEN c.count>n.count THEN 'California University'
         ELSE 'No Winner' END) AS winner
-FROM (SELECT COUNT(student_id) FROM NewYork WHERE score>=90) n,
-(SELECT COUNT(student_id) FROM California WHERE score>=90) c;
+FROM (SELECT COUNT(student_id) AS count FROM NewYork WHERE score>=90) n,
+(SELECT COUNT(student_id) AS count FROM California WHERE score>=90) c;
 
 -- Drop unused tables
 DROP TABLE NewYork;

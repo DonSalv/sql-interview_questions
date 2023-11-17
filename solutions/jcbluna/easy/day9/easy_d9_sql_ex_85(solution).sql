@@ -9,12 +9,19 @@ INSERT INTO Purchases (user_id, time_stamp, amount) VALUES ('3', TO_DATE('2022-0
 INSERT INTO Purchases (user_id, time_stamp, amount) VALUES ('3', TO_DATE('2022-03-30 09:43:42','%YYYY-%MM-%DD %HH24:%MI:%SS'), '626');
 
 -- Solve the exercise
+DEFINE minAmount='1000'
+DEFINE startDate='2022-03-08'
+DEFINE endDate='2022-03-20'
+
 SELECT user_id
 FROM Purchases
 WHERE amount>=&minAmount
-AND time_stamp BETWEEN TO_DATE('&startDate','%YYYY-%MM-%DD')
-                        AND TO_DATE('&endDate','%YYYY-%MM-%DD')
+AND time_stamp BETWEEN TO_DATE('&startDate','%YYYY-%MM-%DD') AND TO_DATE('&endDate','%YYYY-%MM-%DD')
 ORDER BY user_id;
+
+UNDEFINE minAmount
+UNDEFINE startDate
+UNDEFINE endDate  
                         
 -- Drop unused table
 DROP TABLE Purchases;
