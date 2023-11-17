@@ -11,7 +11,8 @@ INSERT INTO Person (person_id, name, profession) VALUES ('6', 'Tyson', 'Engineer
 INSERT INTO Person (person_id, name, profession) VALUES ('5', 'Meir', 'Lawyer');
 
 -- Solve the exercise
-SELECT person_id, name || '(' || UPPER(SUBSTR(profession,1,1)) || ')'
+-- Rename the second column
+SELECT person_id, name || '(' || UPPER(SUBSTR(profession,1,1)) || ')' AS name
 FROM Person
 ORDER BY person_id DESC;
 

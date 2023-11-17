@@ -21,7 +21,8 @@ INSERT INTO Rides (ride_id, user_id, distance) VALUES ('56', '2', '196');
 INSERT INTO Rides (ride_id, user_id, distance) VALUES ('10', '14', '25');
 
 -- Solve the exercise
-SELECT user_id, name, SUM(NVL(distance,0)) AS traveled_distance
+-- Change the name of the columns
+SELECT user_id AS "user_id", name AS "name", SUM(NVL(distance,0)) AS "traveled distance"
 FROM Users LEFT OUTER JOIN Rides
 USING(user_id)
 GROUP BY user_id, name

@@ -13,10 +13,11 @@ INSERT INTO Spotify (id, track_name, artist) VALUES ('811266', 'Young Dumb & Bro
 INSERT INTO Spotify (id, track_name, artist) VALUES ('505727', 'Happier', 'Ed Sheeran');
 
 -- Solve the exercise
-SELECT artist, COUNT(id) AS ocurrences
+-- Fix the typo in the name of the second column
+SELECT artist, COUNT(id) AS occurrences
 FROM Spotify
 GROUP BY artist
-ORDER BY ocurrences DESC, artist ASC;
+ORDER BY occurrences DESC, artist ASC;
 
 -- Drop unused table and turn off the substitution of the & character
 SET DEFINE ON;
