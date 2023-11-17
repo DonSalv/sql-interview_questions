@@ -17,11 +17,15 @@ INSERT INTO Ads (ad_id, customer_id, timestamp) VALUES ('2', '2', '17');
 INSERT INTO Ads (ad_id, customer_id, timestamp) VALUES ('3', '2', '20');
 
 -- Solve the exercise
-SELECT DISTINCT session_id
-FROM Playback LEFT OUTER JOIN Ads
+SELECT session_id
+FROM(SELECT session_id,
+-- Count all the ads in each session
+COUNT(CASE WHEN timestamp BETWEEN start_time AND end_time THEN 1 ELSE NULL END) AS ads_viewed
+FROM Playback JOIN Ads
 USING(customer_id)
-WHERE NOT timestamp BETWEEN start_time AND end_time
-OR timestamp IS NULL
+GROUP BY session_id)
+-- Select only the session with 0 ads viewed
+WHERE ads_viewed=0
 ORDER BY session_id;
 
 -- Drop unused tables

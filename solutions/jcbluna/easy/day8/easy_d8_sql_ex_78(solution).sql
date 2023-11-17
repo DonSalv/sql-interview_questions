@@ -21,11 +21,15 @@ INSERT INTO Confirmations (user_id, time_stamp, action) VALUES ('6', TO_DATE('20
 INSERT INTO Confirmations (user_id, time_stamp, action) VALUES ('6', TO_DATE('2021-10-24 14:14:13','%YYYY-%MM-%DD %HH24:%MI:%SS'), 'timeout');
 
 -- Solve the exercise
-SELECT DISTINCT user_id
-FROM Confirmations c
-WHERE 1>=ALL (SELECT NVL(time_stamp-LAG(time_stamp,1) OVER (PARTITION BY user_id ORDER BY time_stamp),0) AS difference
-            FROM Confirmations
-            WHERE user_id=c.user_id)
+-- New logic creating a column which is 1 if two consecutive timestamps are within a day and NULL otherwise
+-- and finally we retrieve all the user id's which count of this column is greater than one.
+SELECT user_id
+FROM (SELECT user_id,
+(CASE WHEN time_stamp-LAG(time_stamp,1) OVER (PARTITION BY user_id ORDER BY time_stamp) <=1 THEN 1 ELSE NULL END) AS twice_a_day
+FROM Confirmations
+ORDER BY user_id)
+GROUP BY user_id
+HAVING COUNT(twice_a_day)>0
 ORDER BY user_id;
 
 -- Drop unused tables

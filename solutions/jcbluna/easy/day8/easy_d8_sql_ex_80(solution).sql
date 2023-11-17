@@ -14,7 +14,9 @@ INSERT INTO Employees (employee_id, name, manager_id, salary) VALUES ('11', 'Joz
 SELECT employee_id
 FROM Employees
 WHERE salary<30000
-AND manager_id NOT IN (SELECT employee_id FROM Employees);
+AND manager_id NOT IN (SELECT employee_id FROM Employees)
+-- Order the table by the employee id
+ORDER BY employee_id;
 
 -- Drop unused table
 DROP TABLE Employees;

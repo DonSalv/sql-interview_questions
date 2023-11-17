@@ -8,7 +8,8 @@ INSERT INTO Days (day) VALUES (TO_DATE('2021-08-09','%YYYY-%MM-%DD'));
 INSERT INTO Days (day) VALUES (TO_DATE('2020-06-26','%YYYY-%MM-%DD'));
 
 -- Solve the exercise
-SELECT TO_CHAR(day,'DL')
+-- Change column name and remove the zero padding of the day.
+SELECT TO_CHAR(day,'Day, Month fmDD, YYYY')  AS "day"
 FROM Days
 ORDER BY day DESC;
 
