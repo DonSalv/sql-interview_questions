@@ -25,7 +25,8 @@ FROM (SELECT name, COUNT(v.id) AS votes
     ON(c.id=v.candidateId)
     GROUP BY name
     ORDER BY votes DESC)
-FETCH NEXT 1 ROW ONLY;
+-- Write the query without the FETCH NEXT clause
+WHERE ROWNUM=1;
 
 -- Drop unused table
 DROP TABLE Candidate;

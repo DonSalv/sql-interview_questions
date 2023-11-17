@@ -9,13 +9,15 @@ INSERT INTO SurveyLog (id, action, question_id, answer_id, q_num, timestamp) VAL
 INSERT INTO SurveyLog (id, action, question_id, answer_id, q_num, timestamp) VALUES ('5', 'skip', '369', NULL, '2', '126');
 
 -- Solve the exercise
-SELECT question_id AS survey_log
+SELECT survey_log
+FROM(SELECT question_id AS survey_log
 FROM SurveyLog
 GROUP BY question_id
 ORDER BY COUNT(CASE action WHEN 'answer' THEN 1
                 ELSE 0 END)*COUNT(CASE action WHEN 'show' THEN 1
-                ELSE 0 END) DESC, question_id ASC
-FETCH NEXT 1 ROW ONLY;
+                ELSE 0 END) DESC, question_id ASC)
+-- Write the query without the FETCH NEXT clause
+WHERE ROWNUM=1;
 
 -- Drop unused table
 DROP TABLE SurveyLog;
