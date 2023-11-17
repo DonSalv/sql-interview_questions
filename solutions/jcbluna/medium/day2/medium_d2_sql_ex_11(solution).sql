@@ -9,15 +9,15 @@ INSERT INTO RequestAccepted (requester_id, accepter_id, accept_date) VALUES ('2'
 INSERT INTO RequestAccepted (requester_id, accepter_id, accept_date) VALUES ('3', '4', TO_DATE('2016/06/09','%YYYY/%MM/%DD'));
 
 -- Solve the exercise
-SELECT id, COUNT(id) AS num
+SELECT id, num
+FROM (SELECT id, COUNT(id) AS num
 FROM (SELECT requester_id AS id FROM RequestAccepted
--- 
         UNION ALL
         SELECT accepter_id AS id FROM RequestAccepted)
 GROUP BY id
-ORDER BY num DESC
-FETCH NEXT 1 ROW ONLY;
-
+ORDER BY num DESC)
+-- Write the query without the FETCH NEXT clause
+WHERE ROWNUM=1;
 
 -- Drop unused table
 DROP TABLE RequestAccepted;

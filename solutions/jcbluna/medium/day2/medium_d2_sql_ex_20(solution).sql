@@ -10,13 +10,24 @@ INSERT INTO Activity (player_id, device_id, event_date, games_played) VALUES ('3
 INSERT INTO Activity (player_id, device_id, event_date, games_played) VALUES ('3', '4', TO_DATE('2018-07-03','%YYYY-%MM-%DD'), '5');
 
 -- Solve the exercise
-SELECT ROUND(COUNT(diff)/COUNT(DISTINCT player_id),2) AS fraction
-FROM (
-SELECT DISTINCT player_id,
-event_date-LAG(event_date,1) OVER (PARTITION BY player_id ORDER BY event_date) AS diff
-FROM Activity)
-WHERE diff IS NULL
-OR diff=1;
+-- New Logic
+WITH FirstLogin AS
+-- 1. Create a table with the first login of each player
+(SELECT player_id,
+MIN(event_date) AS first_login
+FROM Activity
+GROUP BY player_id)
+-- 3. Count the second login's in the second day that are not null
+-- and divide it by the number of players
+SELECT ROUND(COUNT(second_login)/COUNT(player_id),2) AS fraction
+-- 2. Make a non-equijoin with the first_login with the
+-- login of the next day if there exist, using the DISTINCT
+-- clause to assure that there is only one entry per player
+-- enven if he login more than once the second day
+FROM(SELECT DISTINCT f.player_id, event_date AS second_login
+FROM FirstLogin f LEFT OUTER JOIN Activity a
+ON(f.first_login+1=a.event_date
+AND f.player_id=a.player_id));
 
 -- Drop unused table
 DROP TABLE Activity;

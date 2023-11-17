@@ -18,7 +18,8 @@ INSERT INTO Employee (employee_id, name, experience_years) VALUES ('3', 'John', 
 INSERT INTO Employee (employee_id, name, experience_years) VALUES ('4', 'Doe', '2');
 
 -- Solve the exercise
-SELECT project_id, employee_id
+-- Fix the column ambiguosly defined
+SELECT project_id, e.employee_id
 FROM Project p JOIN Employee e
 ON(p.employee_id=e.employee_id)
 WHERE (project_id, experience_years) IN

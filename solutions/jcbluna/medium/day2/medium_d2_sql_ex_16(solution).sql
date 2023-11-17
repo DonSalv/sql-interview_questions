@@ -16,15 +16,16 @@ INSERT INTO Product (product_key) VALUES ('5');
 INSERT INTO Product (product_key) VALUES ('6');
 
 -- Solve the exercise
+-- New logic
 SELECT customer_id
 FROM (
--- Create a table with the customer and a string of the list of different products bought
-    SELECT DISTINCT customer_id, 
-        LISTAGG(DISTINCT product_key, ',') WITHIN GROUP (ORDER BY product_key) OVER(PARTITION BY customer_id) AS prods
-        FROM Customer)
--- Check if the list of the products match with the one on the Product table
-WHERE prods=(SELECT LISTAGG(DISTINCT product_key, ',') WITHIN GROUP (ORDER BY product_key)
-        FROM Product);
+-- Group the Customer table and count the distinct products he/she bought
+SELECT customer_id, COUNT(DISTINCT product_key) AS num_diff_prods
+FROM Customer
+GROUP BY customer_id)
+-- Finally request only the customers who have bought the same number
+-- of products as products are in the Product table
+WHERE num_diff_prods=(SELECT COUNT(DISTINCT product_key) FROM Product);
 
 -- Drop unused tables
 DROP TABLE Customer;
