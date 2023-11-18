@@ -16,15 +16,18 @@ INSERT INTO Customer (customer_id, name, visited_on, amount) VALUES ('1', 'Jhon'
 INSERT INTO Customer (customer_id, name, visited_on, amount) VALUES ('3', 'Jade', TO_DATE('2019-01-10','%YYYY-%MM-%DD'), '150');
 
 -- Solve the exercise
-SELECT TO_CHAR(visited_on,'YYYY-MM-DD') AS visited_on, 
+SELECT visited_on, amount, average_amount
+FROM(SELECT TO_CHAR(visited_on,'YYYY-MM-DD') AS visited_on, 
 -- 2. Use the Aggregate functions to calculate the rolling sum and average
 SUM(amount) OVER (ORDER BY visited_on ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS amount,
-ROUND(AVG(amount) OVER (ORDER BY visited_on ROWS BETWEEN 6 PRECEDING AND CURRENT ROW),2) AS average_amount
+ROUND(AVG(amount) OVER (ORDER BY visited_on ROWS BETWEEN 6 PRECEDING AND CURRENT ROW),2) AS average_amount,
+ROW_NUMBER() OVER (ORDER BY visited_on) AS row_num
 FROM (
 -- 1. Group the total amount per date
-SELECT visited_on, SUM(amount) AS amount FROM Customer GROUP BY visited_on)
+SELECT visited_on, SUM(amount) AS amount FROM Customer GROUP BY visited_on))
 -- 3. Don't show the first 6 rows to have a reliable average
-OFFSET 6 ROWS;
+-- and don't use the OFFSET clause
+WHERE row_num>6;
 
 -- Drop unused table
 DROP TABLE Customer;

@@ -11,12 +11,14 @@ INSERT INTO Queue (person_id, person_name, weight, turn) VALUES ('1', 'Winston',
 INSERT INTO Queue (person_id, person_name, weight, turn) VALUES ('2', 'Marie', '200', '4');
 
 -- Solve the exercise
-SELECT person_name
+SELECT *
+FROM(SELECT person_name
 FROM (SELECT person_name, SUM(weight) OVER(ORDER BY turn) AS total_weight
 FROM Queue)
 WHERE total_weight<=1000
-ORDER BY total_weight DESC
-FETCH NEXT 1 ROW ONLY;
+ORDER BY total_weight DESC)
+-- Write the query without the FETCH NEXT clause
+WHERE ROWNUM=1;
 
 -- Drop unused table
 DROP TABLE Queue;

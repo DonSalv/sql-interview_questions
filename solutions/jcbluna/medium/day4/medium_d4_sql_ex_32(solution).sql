@@ -17,7 +17,8 @@ INSERT INTO Chargebacks (trans_id, trans_date) VALUES ('101', TO_DATE('2019-06-3
 INSERT INTO Chargebacks (trans_id, trans_date) VALUES ('105', TO_DATE('2019-09-18','%YYYY-%MM-%DD'));
 
 -- Solve the exercise
-SELECT TO_CHAR(TRUNC(trans_date),'YYYY-MM') AS month, country, 
+SELECT * 
+FROM(SELECT TO_CHAR(TRUNC(trans_date),'YYYY-MM') AS month, country, 
 COUNT(CASE state WHEN 'approved' THEN 1 ELSE NULL END) AS approved_count,
 SUM(CASE state WHEN 'approved' THEN amount ELSE 0 END) AS approved_amount,
 COUNT(CASE state WHEN 'chargeback' THEN 1 ELSE NULL END) AS chargeback_count,
@@ -32,7 +33,9 @@ FROM (SELECT id, country, state, amount, trans_date
     FROM Transactions t JOIN Chargebacks c
     ON(t.id=c.trans_id))
 GROUP BY TO_CHAR(TRUNC(trans_date),'YYYY-MM'), country
-ORDER BY TO_CHAR(TRUNC(trans_date),'YYYY-MM');
+ORDER BY TO_CHAR(TRUNC(trans_date),'YYYY-MM'))
+-- Don't select the rows which all columns are zero
+WHERE approved_count+approved_amount+chargeback_count+chargeback_amount!=0;
 
 
 -- Drop unused tables

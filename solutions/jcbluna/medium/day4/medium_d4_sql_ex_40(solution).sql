@@ -18,25 +18,24 @@ INSERT INTO Activities (id, name) VALUES ('2', 'Singing');
 INSERT INTO Activities (id, name) VALUES ('3', 'Horse Riding');
 
 -- Solve the exercise
-
 -- 1. Create an auxiliar table with the activities and their
--- counts
+-- counts, and create ranks for activities with the same count
 WITH activity_count AS
-(SELECT activity, COUNT(activity) AS counts
+(SELECT activity, DENSE_RANK() OVER(ORDER BY counts) AS rank_act
+FROM(SELECT activity, COUNT(activity) AS counts
 FROM Friends
-GROUP BY activity)
+GROUP BY activity))
 -- 3. Select the name of the activities not contained in the list
 -- of activities which maximum or minimum participants (step 2).
 SELECT name AS activity
 FROM Activities
 WHERE name NOT IN (
 -- 2. Extract the names of the activity with maximum and minimum
--- counts
-SELECT MAX(activity) KEEP (DENSE_RANK FIRST ORDER BY counts)
-                        FROM activity_count
-                        UNION ALL
-                        SELECT MAX(activity) KEEP (DENSE_RANK LAST ORDER BY counts)
-                        FROM activity_count);
+-- ranks
+SELECT activity 
+FROM activity_count
+WHERE rank_act=(SELECT MAX(rank_act) FROM activity_count)
+OR rank_act=(SELECT MIN(rank_act) FROM activity_count));
 
 -- Drop unused table
 DROP TABLE Friends;
