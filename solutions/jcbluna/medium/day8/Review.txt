@@ -1,0 +1,187 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 71
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Experiments
+    | experiment_id | platform | experiment_name |
+    | ------------- | -------- | --------------- |
+    | 21            | Android  | Reading         |
+    | 17            | IOS      | Programming     |
+    | 3             | Android  | Programming     |
+    | 13            | Android  | Programming     |
+
+Your Output:
+    | PLATFORM | EXPERIMENT_NAME | NUM_EXPERIMENTS |
+    | -------- | --------------- | --------------- |
+    | IOS      | Programming     | 1               |
+    | Android  | Programming     | 2               |
+    | IOS      | Reading         | 0               |
+    | Android  | Reading         | 1               |
+
+Expected Output:
+    | platform | experiment_name | num_experiments |
+    | -------- | --------------- | --------------- |
+    | Android  | Reading         | 1               |
+    | Android  | Sports          | 0               |
+    | Android  | Programming     | 2               |
+    | IOS      | Reading         | 0               |
+    | IOS      | Sports          | 0               |
+    | IOS      | Programming     | 1               |
+    | Web      | Reading         | 0               |
+    | Web      | Sports          | 0               |
+    | Web      | Programming     | 0               |
+
+Exercise 72
+Observations: --
+Pass: ✅
+Execution Time: 1578 ms
+Performance: Standard
+
+Exercise 73
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Candidates
+    | candidate_id | name     | years_of_exp | interview_id |
+    | ------------ | -------- | ------------ | ------------ |
+    | 5            | Erik     | 6            | 101          |
+    | 13           | Edgar    | 7            | 102          |
+    | 14           | Samson   | 8            | 113          |
+    | 6            | Grady    | 10           | 111          |
+    | 1            | Jimena   | 0            | 103          |
+    | 3            | Sullivan | 7            | 114          |
+    | 10           | Itzayana | 0            | 107          |
+    | 15           | Noor     | 3            | 108          |
+
+    Table: Rounds
+    | interview_id | round_id | score |
+    | ------------ | -------- | ----- |
+    | 111          | 3        | 6     |
+    | 111          | 1        | 6     |
+    | 103          | 2        | 6     |
+    | 114          | 1        | 5     |
+    | 102          | 1        | 6     |
+    | 107          | 4        | 7     |
+    | 108          | 4        | 7     |
+    | 102          | 2        | 4     |
+    | 114          | 2        | 5     |
+    | 101          | 3        | 1     |
+    | 103          | 1        | 2     |
+    | 108          | 2        | 4     |
+    | 107          | 1        | 6     |
+    | 114          | 3        | 1     |
+    | 113          | 2        | 2     |
+    | 107          | 3        | 3     |
+    | 111          | 2        | 6     |
+    | 113          | 1        | 3     |
+    | 113          | 3        | 7     |
+    | 101          | 2        | 7     |
+    | 108          | 3        | 1     |
+    | 107          | 2        | 4     |
+    | 108          | 1        | 6     |
+    | 108          | 5        | 2     |
+    | 101          | 1        | 7     |
+
+Your Output:
+    | CANDIDATE_ID |
+    | ------------ |
+    | 6            |
+
+Expected Output:
+    | candidate_id |
+    | ------------ |
+    | 6            |
+    | 15           |
+
+Exercise 74
+Observations: --
+Pass: ✅
+Execution Time: 1854 ms
+Performance: Standard
+
+Exercise 75
+Observations: Check the date field for the 00:00:00 timestamp part
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 76
+Observations: --
+Pass: ✅
+Execution Time: 1375 ms
+Performance: Low
+
+Exercise 77
+Observations: --
+Pass: ✅
+Execution Time: 967 ms
+Performance: Standard
+
+Exercise 78
+Observations: Check the name of the columns
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Buses
+    | bus_id | arrival_time |
+    | ------ | ------------ |
+    | 1      | 2            |
+    | 2      | 4            |
+    | 3      | 7            |
+
+    Table: Passengers
+    | passenger_id | arrival_time |
+    | ------------ | ------------ |
+    | 11           | 4            |
+    | 12           | 5            |
+    | 13           | 6            |
+    | 14           | 7            |
+
+Your Output:
+    | BUS_ID | PASSENGERS_CNT |
+    | ------ | -------------- |
+    | 1      | 1              |
+    | 2      | 1              |
+    | 3      | 3              |
+
+Expected Output:
+    | bus_id | passengers_cnt |
+    | ------ | -------------- |
+    | 1      | 0              |
+    | 2      | 1              |
+    | 3      | 3              |
+
+Exercise 79
+Observations: --
+Pass: ✅
+Execution Time: 872 ms
+Performance: Standard
+
+Exercise 80
+Observations: --
+Pass: ✅
+Execution Time: 1354
+Performance: Top
