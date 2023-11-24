@@ -1,0 +1,273 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 91
+Observations: --
+Pass: ✅
+Execution Time: 2777 ms
+Performance: Low
+
+Exercise 92
+Observations: The date field has timestamp output 00:00:00
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 93
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Users
+    | user_id | item              | created_at | amount |
+    | ------- | ----------------- | ---------- | ------ |
+    | 5       | Smart Crock Pot   | 2021-09-18 | 698882 |
+    | 6       | Smart Lock        | 2021-09-14 | 11487  |
+    | 6       | Smart Thermostat  | 2021-09-10 | 674762 |
+    | 8       | Smart Light Strip | 2021-09-29 | 630773 |
+    | 4       | Smart Cat Feeder  | 2021-09-02 | 693545 |
+    | 4       | Smart Cat Feeder  | 2021-09-02 | 693545 |
+
+Your Output:
+    | USER_ID |
+    | ------- |
+    | 4       |
+
+Expected Output:
+    | user_id |
+    | ------- |
+    | 6       |
+    | 4       |
+
+Exercise 94
+Observations: --
+Pass:  ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data"
+    Table: Files
+    | file_name    | content                                                                                  |
+    | ------------ | ---------------------------------------------------------------------------------------- |
+    | file1.txt    | bear bull bear bull bear bear bear bear bull bears bullish                               |
+    | file_572.txt | bull bear bear bull bear bears bullish                                                   |
+    | file_928.txt | bull bull bull bear bear bull bull bull bears bullish                                    |
+    | file_840.txt | bull bull bear bear bull bear bull bear bull bull bull bull bear bear bear bears bullish |
+    | file_489.txt | bear bull bull bull bear bear bear bear bear bull bear bull bear bear bears bullish      |
+    | file_381.txt | bull bull bear bear bull bull bull bear bull bear bull bull bull bears bullish           |
+    | file_183.txt | bear bull bear bear bear bear bears bullish                                              |
+    | file_617.txt | bull bear bear bull bear bear bear bear bear bull bull bear bear bull bull bears bullish |
+    | file_785.txt | bull bear bear bull bull bull bull bull bears bullish                                    |
+    | file_634.txt | bear bull bull bear bear bull bears bullish                                              |
+    | file_236.txt | bear bear bear bear bear bull bear bear bull bear bear bear bull bears bullish           |
+    | file_752.txt | bear bull bull bull bull bear bear bull bull bears bullish                               |
+    | file_206.txt | bear bull bear bull bear bear bull bear bull bear bear bears bullish                     |
+    | file_654.txt | bull bull bull bull bull bull bear bull bear bull bear bears bullish                     |
+    | file_194.txt | bear bear bull bull bear bull bull bear bear bears bullish                               |
+    | file_332.txt | bear bull bull bear bear bull bears bullish                                              |
+    | file_778.txt | bear bear bull bull bull bear bear bear bull bull bear bear bull bear bull bears bullish |
+    | file_967.txt | bull bear bear bear bull bear bear bull bears bullish                                    |
+    | file_529.txt | bear bull bear bear bull bear bear bears bullish                                         |
+    | file_805.txt | bull bear bear bear bull bears bullish                                                   |
+    | file_996.txt | bear bear bull bear bear bear bears bullish                                              |
+    | file_648.txt | bull bull bear bull bull bear bear bull bear bears bullish                               |
+    | file_823.txt | bear bear bear bear bear bull bull bear bull bear bears bullish                          |
+    | file_423.txt | bear bear bear bear bear bear bear bull bull bull bear bears bullish                     |
+    | file_113.txt | bull bear bear bull bear bull bull bear bull bears bullish                               |
+    | file_14.txt  | bull bull bull bear bull bull bear bears bullish                                         |
+    | file_560.txt | bull bear bear bull bear bears bullish                                                   |
+    | file_101.txt | bull bull bear bear bear bear bear bear bear bull bear bull bull bears bullish           |
+    | file_504.txt | bull bear bear bear bull bull bear bull bull bull bears bullish                          |
+    | file_434.txt | bull bull bull bull bull bull bears bullish                                              |
+    | file_608.txt | bear bull bear bear bear bear bull bear bears bullish                                    |
+    | file_90.txt  | bear bull bear bull bear bull bear bull bear bull bull bull bull bear bear bears bullish |
+    | file_749.txt | bear bear bear bear bear bear bull bear bull bull bears bullish                          |
+    | file_350.txt | bear bull bear bear bear bear bear bull bull bear bull bears bullish                     |
+    | file_372.txt | bull bear bear bear bear bear bear bear bear bull bull bear bull bears bullish           |
+    | file_963.txt | bear bear bull bear bear bear bear bull bear bull bears bullish                          |
+    | file_855.txt | bull bear bull bear bull bear bull bear bull bear bull bull bull bull bear bears bullish |
+    | file_125.txt | bull bull bear bear bear bull bear bear bear bear bear bear bear bull bull bears bullish |
+    | file_605.txt | bear bear bear bear bear bull bull bull bear bear bear bear bull bears bullish           |
+    | file_707.txt | bear bear bull bear bear bear bull bull bull bear bull bear bull bears bullish           |
+    | file_163.txt | bull bear bear bear bull bull bull bull bears bullish                                    |
+    | file_390.txt | bear bear bull bull bull bull bull bear bull bear bull bear bull bears bullish           |
+    | file_988.txt | bull bear bear bull bear bear bear bear bull bull bear bear bull bear bears bullish      |
+    | file_425.txt | bull bear bull bear bear bull bear bears bullish                                         |
+    | file_418.txt | bear bull bull bear bear bear bear bull bull bears bullish                               |
+    | file_845.txt | bull bull bull bull bull bears bullish                                                   |
+    | file_806.txt | bull bull bear bull bear bull bull bear bear bear bear bull bear bears bullish           |
+    | file_769.txt | bear bear bear bull bull bears bullish                                                   |
+    | file_978.txt | bear bear bear bull bear bears bullish                                                   |
+    | file_365.txt | bull bear bull bear bear bull bull bear bull bull bears bullish                          |
+    | file_906.txt | bull bull bull bear bear bear bears bullish                                              |
+    | file_798.txt | bear bull bear bear bear bears bullish                                                   |
+    | file_53.txt  | bear bear bull bull bull bull bear bear bull bull bear bear bear bull bull bears bullish |
+    | file_699.txt | bear bear bull bull bull bear bull bears bullish                                         |
+    | file_181.txt | bull bear bear bear bull bear bear bull bull bears bullish                               |
+    | file_986.txt | bull bull bull bull bear bull bull bull bear bear bull bull bull bear bears bullish      |
+    | file_624.txt | bull bull bear bull bear bull bear bear bull bear bull bear bull bears bullish           |
+    | file_437.txt | bull bear bull bull bear bull bull bull bull bull bull bear bear bull bears bullish      |
+    | file_92.txt  | bull bull bear bull bull bear bull bear bull bull bull bull bears bullish                |
+    | file_11.txt  | bear bear bear bear bull bull bear bull bear bears bullish                               |
+    | file_844.txt | bear bear bear bull bull bear bear bull bear bear bear bears bullish                     |
+    | file_349.txt | bull bull bear bull bull bears bullish                                                   |
+    | file_235.txt | bear bear bear bull bull bull bear bull bear bear bear bull bears bullish                |
+    | file_49.txt  | bull bear bear bear bear bears bullish                                                   |
+    | file_775.txt | bull bull bear bull bull bear bear bears bullish                                         |
+    | file_7.txt   | bear bear bear bull bear bear bear bull bull bear bears bullish                          |
+    | file_242.txt | bull bull bear bull bull bull bull bear bull bears bullish                               |
+    | file_815.txt | bull bull bear bull bear bull bull bear bull bull bull bear bear bull bull bears bullish |
+    | file_643.txt | bear bear bear bull bull bull bear bears bullish                                         |
+    | file_456.txt | bull bull bear bull bull bull bears bullish                                              |
+    | file_787.txt | bull bear bull bear bear bull bear bull bull bear bears bullish                          |
+    | file_867.txt | bull bull bear bear bear bear bear bear bull bear bear bull bull bull bear bears bullish |
+    | file_792.txt | bull bull bear bear bull bull bull bull bull bull bears bullish                          |
+    | file_505.txt | bear bull bear bear bull bull bear bear bear bull bear bull bull bears bullish           |
+    | file_966.txt | bull bull bear bear bear bear bear bear bear bull bull bull bull bears bullish           |
+    | file_549.txt | bull bull bull bull bull bull bear bear bear bull bear bear bull bears bullish           |
+    | file_359.txt | bull bear bull bear bear bears bullish                                                   |
+    | file_387.txt | bull bear bull bear bull bull bull bull bear bear bull bull bull bears bullish           |
+    | file_554.txt | bull bull bear bear bear bears bullish                                                   |
+    | file_126.txt | bear bear bear bull bull bull bear bear bear bull bear bear bull bears bullish           |
+    | file_210.txt | bear bull bull bull bear bull bear bear bears bullish                                    |
+    | file_237.txt | bull bull bear bear bull bear bull bears bullish                                         |
+    | file_649.txt | bull bear bear bull bull bears bullish                                                   |
+    | file_835.txt | bear bull bull bear bear bear bear bull bear bear bull bull bears bullish                |
+    | file_304.txt | bull bear bear bull bull bull bull bull bull bear bull bear bears bullish                |
+    | file_873.txt | bull bear bear bear bull bull bears bullish                                              |
+    | file_987.txt | bull bear bull bull bull bear bear bear bear bear bear bears bullish                     |
+    | file_130.txt | bull bull bull bull bear bull bull bull bear bears bullish                               |
+    | file_469.txt | bear bear bull bear bull bear bear bears bullish                                         |
+    | file_500.txt | bear bear bear bear bear bear bull bear bull bear bear bull bear bull bears bullish      |
+    | file_428.txt | bear bull bull bear bull bear bull bull bear bear bear bull bull bull bear bears bullish |
+    | file_697.txt | bear bull bull bear bear bear bear bear bull bull bear bull bears bullish                |
+    | file_164.txt | bull bear bear bull bull bear bear bear bear bull bull bull bears bullish                |
+    | file_747.txt | bear bear bear bear bull bear bear bear bull bull bull bull bear bears bullish           |
+    | file_169.txt | bull bull bull bear bull bear bull bear bull bear bear bull bull bears bullish           |
+    | file_348.txt | bear bull bull bear bear bear bear bull bear bear bear bear bull bears bullish           |
+    | file_32.txt  | bear bear bear bear bull bear bear bull bull bear bull bull bear bears bullish           |
+    | file_540.txt | bull bull bear bull bull bear bull bull bull bears bullish                               |
+    | file_258.txt | bull bull bear bear bear bull bull bear bear bull bear bears bullish                     |
+    | file_373.txt | bull bear bear bull bear bull bear bear bull bull bear bull bear bears bullish           |
+    | file_318.txt | bull bear bull bear bear bear bull bear bear bears bullish                               |
+    | file_666.txt | bull bear bull bear bull bull bull bear bear bull bears bullish                          |
+    | file_66.txt  | bear bull bear bull bear bull bull bear bull bear bear bear bear bears bullish           |
+    | file_765.txt | bull bear bull bull bull bull bull bear bear bull bears bullish                          |
+    | file_95.txt  | bear bear bull bull bear bear bear bear bear bears bullish                               |
+    | file_899.txt | bull bear bull bull bear bears bullish                                                   |
+    | file_528.txt | bear bull bull bear bull bull bear bull bear bull bull bull bull bear bear bears bullish |
+    | file_259.txt | bear bear bear bull bear bull bull bull bull bull bear bear bear bear bears bullish      |
+    | file_5.txt   | bull bull bear bear bull bear bear bear bull bull bear bears bullish                     |
+    | file_790.txt | bull bull bear bear bull bull bull bear bear bull bear bull bears bullish                |
+    | file_18.txt  | bear bear bear bear bull bull bull bears bullish                                         |
+    | file_851.txt | bear bull bull bear bull bull bear bear bear bull bear bears bullish                     |
+    | file_148.txt | bear bull bull bull bear bears bullish                                                   |
+    | file_209.txt | bear bear bull bear bear bull bear bull bull bears bullish                               |
+    | file_308.txt | bull bear bull bear bear bear bull bears bullish                                         |
+    | file_278.txt | bear bear bull bear bull bull bears bullish                                              |
+    | file_340.txt | bull bull bear bull bear bull bears bullish                                              |
+    | file_917.txt | bull bear bear bull bull bear bull bull bull bull bull bear bull bull bull bears bullish |
+    | file_473.txt | bear bull bear bull bull bull bear bear bears bullish                                    |
+    | file_24.txt  | bull bull bear bear bear bear bull bull bull bull bull bear bull bear bull bears bullish |
+    | file_637.txt | bull bull bear bear bull bear bull bull bear bear bear bear bull bear bull bears bullish |
+    | file_115.txt | bear bear bull bull bear bull bull bull bear bears bullish                               |
+    | file_829.txt | bull bull bull bull bull bear bear bear bear bear bull bears bullish                     |
+    | file_596.txt | bear bear bull bull bull bears bullish                                                   |
+    | file_784.txt | bear bear bear bear bear bear bears bullish                                              |
+    | file_399.txt | bear bull bear bear bear bull bears bullish                                              |
+
+Your Output:
+    | WORD | COUNT |
+    | ---- | ----- |
+    | bear | 395   |
+    | bull | 383   |
+
+Expected Output:
+    | word | count |
+    | ---- | ----- |
+    | bull | 124   |
+    | bear | 124   |
+
+Exercise 95
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data
+    Table: Flights
+    | flight_id | capacity |
+    | --------- | -------- |
+    | 53        | 1        |
+    | 4         | 3        |
+
+    Table: Passengers
+    | passenger_id | flight_id |
+    | ------------ | --------- |
+    | 53           | 1         |
+    | 24           | 50        |
+
+Your Output:
+    | FLIGHT_ID | BOOKED_CNT | WAITLIST_CNT |
+    | --------- | ---------- | ------------ |
+
+Expected Output:
+    | flight_id | booked_cnt | waitlist_cnt |
+    | --------- | ---------- | ------------ |
+    | 4         | 0          | 0            |
+    | 53        | 0          | 0            |
+
+Exercise 96
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Votes
+    | voter     | candidate |
+    | --------- | --------- |
+    | Joseph    | Sophia    |
+    | Oliver    | John      |
+    | Savannah  | Ella      |
+    | Amelia    | William   |
+    | Brooklyn  | Sophia    |
+    | Brooklyn  | Michael   |
+    | Harper    | John      |
+    | Charlotte | null      |
+    | Elena     | Ella      |
+    | Harper    | Michael   |
+
+Your Output:
+    | CANDIDATE |
+    | --------- |
+    | Ella      |
+    | John      |
+    | Michael   |
+    | Sophia    |
+
+Expected Output:
+    | candidate |
+    | --------- |
+    | Ella      |
+
+Exercise 97
+Observations: The date field has timestamp output 00:00:00
+Pass: ⛔
+Execution Time: --
+Performance: --
