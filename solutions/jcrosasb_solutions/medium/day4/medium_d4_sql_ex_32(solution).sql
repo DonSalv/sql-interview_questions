@@ -18,65 +18,39 @@ insert into Chargebacks (trans_id, trans_date) values (105, DATE '2019-09-18');
 
 -- Write a solution to find for each month and country: the number of approved transactions and their total amount, the number of chargebacks, and their total amount.
 -- Note: In your solution, given the month and country, ignore rows with all zeros
+WITH aux_table AS (
+    SELECT 
+        c.trans_id,
+        t.country,
+        'chargeback' AS state,
+        t.amount,
+        c.trans_date
+    FROM   
+        chargebacks c
+    INNER JOIN 
+        transactions t
+    ON 
+        c.trans_id = t.id
+    UNION ALL
+    SELECT 
+        *
+    FROM
+        Transactions)
 SELECT
-    *
-FROM
-(SELECT
-        t.id, 
-        t.country, 
-        t.state, 
-        t.amount, 
-        t.trans_date,
-        c.trans_date AS chargeback_date
-    FROM 
-        Transactions t
-    LEFT JOIN
-        Chargebacks c
-    ON
-        t.id = c.trans_id);
-
-WITH total_trans AS (
-    SELECT
-        t.id, 
-        t.country, 
-        t.state, 
-        t.amount, 
-        t.trans_date,
-        c.trans_date AS chargeback_date
-    FROM 
-        Transactions t
-    LEFT JOIN
-        Chargebacks c
-    ON
-        t.id = c.trans_id)
-SELECT 
-    TO_CHAR(trans_date, 'MM-YYYY') AS month,
+    TO_CHAR(trans_date, 'YYYY-MM') AS month,
     country,
-    COUNT(CASE WHEN state = 'approved' THEN 1 END) AS approved_count,
-    SUM(CASE WHEN state = 'approved' THEN amount END) AS approved_amount
+    NVL(COUNT(CASE WHEN state = 'approved' THEN 1 END), 0) AS approved_count,
+    NVL(SUM(CASE WHEN state = 'approved' THEN amount END), 0) AS approved_amount,
+    NVL(COUNT(CASE WHEN state = 'chargeback' THEN 1 END), 0) AS chargeback_count,
+    NVL(SUM(CASE WHEN state = 'chargeback' THEN amount END), 0) AS chargeback_amount
 FROM
-    total_trans
+    aux_table
 GROUP BY
-    country,
-    TO_CHAR(trans_date, 'MM-YYYY');
- ----------------------------------   
-SELECT 
-    TO_CHAR(t.trans_date, 'MM-YYYY') AS month,
-    t.country,
-    COUNT(CASE WHEN t.state = 'approved' THEN 1 END) AS approved_count,
-    SUM(CASE WHEN t.state = 'approved' THEN t.amount END) AS approved_amount
-FROM
-    Transactions t
-LEFT JOIN
-    Chargebacks c
-ON 
-    TO_CHAR(t.trans_date, 'MM-YYYY') = TO_CHAR(c.trans_date, 'MM-YYYY')
-GROUP BY
-    country,
-    TO_CHAR(trans_date, 'MM-YYYY');
-
---    TO_CHAR(trans_date, 'MM-YYYY') AS month
-
+    TO_CHAR(trans_date, 'YYYY-MM'),
+    country
+ORDER BY
+    TO_CHAR(trans_date, 'YYYY-MM');
+    
 -- Drop tables
 DROP TABLE Transactions;
 DROP TABLE Chargebacks;
