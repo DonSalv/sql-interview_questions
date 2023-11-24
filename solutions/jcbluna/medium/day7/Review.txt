@@ -1,0 +1,160 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 61
+Observations: --
+Pass: ✅
+Execution Time: 1008 ms
+Performance: High
+
+Exercise 62
+Observations: Typos in the columns name. Check them
+Pass: ✅
+Execution Time: 1832 ms
+Performance: Standard
+
+Exercise 63
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Accounts
+    | account_id | max_income |
+    | ---------- | ---------- |
+    | 12         | 62000      |
+    | 8          | 66000      |
+    | 11         | 42000      |
+    | 1          | 13000      |
+    | 10         | 34000      |
+    | 2          | 79000      |
+
+    Table: Transactions
+    | transaction_id | account_id | type     | amount | day                 |
+    | -------------- | ---------- | -------- | ------ | ------------------- |
+    | 23             | 10         | Debtor   | 102800 | 2021-06-27 11:02:39 |
+    | 7              | 11         | Creditor | 104900 | 2021-07-04 10:14:09 |
+    | 45             | 12         | Creditor | 102400 | 2021-07-29 14:25:17 |
+    | 35             | 10         | Creditor | 87000  | 2021-06-11 10:41:09 |
+    | 32             | 8          | Creditor | 32200  | 2021-06-15 14:33:07 |
+    | 11             | 1          | Creditor | 74200  | 2021-07-25 11:23:56 |
+    | 18             | 11         | Creditor | 72700  | 2021-06-12 14:43:32 |
+    | 25             | 12         | Creditor | 34700  | 2021-05-01 13:44:18 |
+    | 21             | 8          | Creditor | 41900  | 2021-05-23 16:18:06 |
+    | 12             | 10         | Creditor | 3800   | 2021-06-16 10:50:19 |
+    | 1              | 11         | Debtor   | 30900  | 2021-07-20 15:57:26 |
+    | 47             | 2          | Debtor   | 40800  | 2021-06-17 15:38:49 |
+    | 28             | 8          | Debtor   | 89600  | 2021-05-13 17:34:36 |
+    | 48             | 11         | Creditor | 27600  | 2021-05-28 15:46:43 |
+    | 29             | 1          | Creditor | 47100  | 2021-06-18 08:04:29 |
+    | 51             | 8          | Creditor | 41100  | 2021-06-19 08:33:50 |
+    | 37             | 10         | Debtor   | 89500  | 2021-07-16 16:56:12 |
+    | 52             | 1          | Debtor   | 14700  | 2021-05-21 08:03:03 |
+    | 33             | 10         | Creditor | 62400  | 2021-07-18 10:56:37 |
+    | 49             | 2          | Debtor   | 8900   | 2021-05-23 16:54:18 |
+    | 54             | 11         | Debtor   | 35700  | 2021-06-20 13:27:25 |
+    | 46             | 2          | Debtor   | 57000  | 2021-06-04 16:59:59 |
+    | 39             | 1          | Creditor | 91000  | 2021-06-02 10:42:09 |
+    | 57             | 12         | Debtor   | 96200  | 2021-07-30 17:18:07 |
+    | 30             | 8          | Creditor | 12900  | 2021-06-16 09:35:05 |
+    | 44             | 11         | Creditor | 38100  | 2021-06-08 13:02:27 |
+    | 15             | 11         | Debtor   | 15300  | 2021-07-25 17:50:03 |
+    | 13             | 11         | Creditor | 63300  | 2021-05-01 16:04:31 |
+    | 36             | 12         | Creditor | 21300  | 2021-07-11 13:49:32 |
+    | 10             | 11         | Debtor   | 41600  | 2021-05-15 17:13:38 |
+`
+    Your Output:
+    | ACCOUNT_ID |
+    | ---------- |
+    | 1          |
+    | 11         |
+
+    Expected Output:
+    | account_id |
+    | ---------- |
+    | 11         |
+    | 1          |
+    | 10         |
+
+Exercise 64
+Observations: --
+Pass: ✅
+Execution Time: 1196 ms
+Performance: Standard
+
+Exercise 65
+Observations: --
+Pass: ✅
+Execution Time: 1387 ms
+Performance: Low
+
+Exercise 66
+Observations: --
+Pass: ✅
+Execution Time: 1199 ms
+Performance: Standard
+
+Exercise 67
+Observations: --
+Pass: ✅
+Execution Time: 1366 ms
+Performance: Standard
+
+Exercise 68
+Observations: Check typo in the columns
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Friendship
+    | user1_id | user2_id |
+    | -------- | -------- |
+    | 4        | 12       |
+    | 4        | 13       |
+    | 1        | 4        |
+    | 4        | 18       |
+    | 4        | 6        |
+    | 12       | 13       |
+    | 2        | 12       |
+    | 3        | 12       |
+    | 7        | 12       |
+    | 13       | 18       |
+    | 1        | 2        |
+    | 1        | 7        |
+    | 2        | 7        |
+    | 3        | 6        |
+    | 6        | 18       |
+
+Your Output:
+    | USER1_ID | USER2_ID | COMMON_FRIEND |
+    | -------- | -------- | ------------- |
+    | 1        | 12       | 3             |
+
+Expected Output:
+    | user1_id | user2_id | common_friend |
+    | -------- | -------- | ------------- |
+
+Exercise 69
+Observations: --
+Pass: ✅
+Execution Time: 1427 ms
+Performance: High
+
+Exercise 70
+Observations: --
+Pass: ✅
+Execution Time: 2179 ms
+Performance: Low
