@@ -1,0 +1,250 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 81
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Purchases
+    | purchase_id | user_id | purchase_date |
+    | ----------- | ------- | ------------- |
+    | 3           | 3       | 2022-01-30    |
+    | 7           | 3       | 2022-02-02    |
+    | 2           | 8       | 2022-05-09    |
+    | 8           | 3       | 2022-06-28    |
+    | 6           | 8       | 2022-07-27    |
+    | 4           | 8       | 2022-05-08    |
+    | 1           | 8       | 2022-03-01    |
+    | 5           | 3       | 2022-04-09    |
+
+Your Output:
+    | USER_ID |
+    | ------- |
+    | 3       |
+
+Expected Output:
+    | user_id |
+    | ------- |
+    | 3       |
+    | 8       |
+
+Exercise 82
+Observations: --
+Pass: ✅
+Execution Time: 1090 ms
+Performance: Standard
+
+Exercise 83
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Orders
+    | order_id | product_id | quantity | purchase_date |
+    | -------- | ---------- | -------- | ------------- |
+    | 32       | 9          | 2        | 2022-11-21    |
+    | 23       | 9          | 6        | 2019-09-11    |
+    | 5        | 10         | 1        | 2018-05-25    |
+    | 30       | 10         | 1        | 2020-11-20    |
+    | 11       | 3          | 7        | 2022-02-21    |
+    | 15       | 9          | 7        | 2022-04-05    |
+    | 17       | 10         | 4        | 2021-02-27    |
+    | 22       | 10         | 1        | 2023-10-12    |
+    | 1        | 10         | 1        | 2019-05-17    |
+    | 47       | 9          | 5        | 2023-12-31    |
+    | 21       | 3          | 5        | 2019-08-11    |
+    | 31       | 10         | 4        | 2021-10-02    |
+    | 4        | 10         | 1        | 2022-11-21    |
+    | 19       | 9          | 7        | 2022-08-27    |
+    | 24       | 10         | 3        | 2023-03-10    |
+    | 20       | 3          | 7        | 2020-09-06    |
+    | 2        | 10         | 7        | 2021-08-26    |
+    | 14       | 3          | 3        | 2023-01-15    |
+    | 43       | 9          | 2        | 2020-05-02    |
+    | 10       | 9          | 2        | 2020-05-23    |
+    | 25       | 9          | 3        | 2018-10-26    |
+    | 29       | 10         | 6        | 2020-03-13    |
+    | 36       | 3          | 3        | 2021-06-16    |
+    | 37       | 10         | 2        | 2019-09-05    |
+    | 33       | 10         | 6        | 2020-04-13    |
+    | 7        | 9          | 5        | 2023-06-07    |
+    | 12       | 10         | 6        | 2023-08-13    |
+    | 34       | 10         | 4        | 2018-11-11    |
+    | 16       | 10         | 4        | 2020-11-28    |
+    | 13       | 3          | 5        | 2019-08-08    |
+    | 46       | 10         | 1        | 2021-06-14    |
+    | 48       | 3          | 5        | 2019-09-24    |
+    | 44       | 3          | 7        | 2022-12-21    |
+    | 28       | 9          | 4        | 2020-03-20    |
+    | 38       | 3          | 7        | 2019-06-11    |
+    | 26       | 10         | 5        | 2020-02-22    |
+    | 41       | 9          | 4        | 2021-08-10    |
+    | 9        | 10         | 2        | 2022-07-04    |
+    | 6        | 10         | 2        | 2019-11-29    |
+    | 35       | 10         | 5        | 2022-05-11    |
+    | 8        | 10         | 6        | 2023-07-09    |
+    | 27       | 10         | 2        | 2023-07-24    |
+    | 39       | 10         | 4        | 2020-05-27    |
+    | 45       | 9          | 4        | 2018-02-17    |
+    | 3        | 3          | 4        | 2018-12-26    |
+    | 40       | 3          | 4        | 2022-03-18    |
+    | 18       | 10         | 1        | 2020-08-25    |
+    | 42       | 3          | 5        | 2018-09-04    |
+
+Your Output:
+    | PRODUCT_ID |
+    | ---------- |
+    | 3          |
+    | 9          |
+    | 10         |
+
+Expected Output:
+    | product_id |
+    | ---------- |
+    | 10         |
+
+Exercise 84
+Observations: --
+Pass: ✅
+Execution Time: 1047 ms
+Performance: Low
+
+Exercise 85
+Observations: --
+Pass: ✅
+Execution Time: 923 ms
+Performance: Top
+
+Exercise 86
+Observations: Check the datatype not to show the 00:00:00
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 87
+Observations: --
+Pass: ✅
+Execution Time: 1557 ms
+Performance: Low
+
+Exercise 88
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Students
+    | student_id | department_id | mark |
+    | ---------- | ------------- | ---- |
+    | 8          | 4             | 860  |
+    | 13         | 3             | 40   |
+    | 3          | 1             | 130  |
+    | 9          | 3             | 40   |
+    | 2          | 3             | 20   |
+    | 12         | 3             | 390  |
+    | 4          | 2             | 270  |
+    | 6          | 4             | 670  |
+    | 11         | 2             | 150  |
+    | 7          | 2             | 130  |
+    | 14         | 3             | 790  |
+    | 10         | 1             | 900  |
+    | 1          | 4             | 910  |
+    | 5          | 1             | 610  |
+
+Your Output:
+    | STUDENT_ID | DEPARTMENT_ID | PERCENTAGE |
+    | ---------- | ------------- | ---------- |
+    | 10         | 1             | 0          |
+    | 5          | 1             | 50         |
+    | 3          | 1             | 100        |
+    | 4          | 2             | 0          |
+    | 11         | 2             | 50         |
+    | 7          | 2             | 100        |
+    | 14         | 3             | 0          |
+    | 12         | 3             | 25         |
+    | 13         | 3             | 50         |
+    | 9          | 3             | 50         |
+    | 2          | 3             | 75         |
+    | 1          | 4             | 0          |
+    | 8          | 4             | 50         |
+    | 6          | 4             | 100        |
+
+Expected Output:
+    | student_id | department_id | percentage |
+    | ---------- | ------------- | ---------- |
+    | 10         | 1             | 0          |
+    | 5          | 1             | 50         |
+    | 3          | 1             | 100        |
+    | 4          | 2             | 0          |
+    | 11         | 2             | 50         |
+    | 7          | 2             | 100        |
+    | 14         | 3             | 0          |
+    | 12         | 3             | 25         |
+    | 13         | 3             | 50         |
+    | 9          | 3             | 50         |
+    | 2          | 3             | 100        |
+    | 1          | 4             | 0          |
+    | 8          | 4             | 50         |
+    | 6          | 4             | 100        |
+
+Exercise 89
+Observations: --
+Pass: ✅
+Execution Time: 1526 ms
+Performance: Top
+
+Exercise 90
+Observations: --
+Pass:  ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: CoffeeShop
+    | id | drink             |
+    | -- | ----------------- |
+    | 9  | Rum and Coke      |
+    | 6  | null              |
+    | 7  | null              |
+    | 3  | St Germain Spritz |
+    | 1  | Orange Margarita  |
+    | 2  | null              |
+
+Your Output:
+    | ID | DRINK             |
+    | -- | ----------------- |
+    | 7  | Rum and Coke      |
+    | 6  | Rum and Coke      |
+    | 9  | Rum and Coke      |
+    | 3  | St Germain Spritz |
+    | 2  | Orange Margarita  |
+    | 1  | Orange Margarita  |
+
+Expected Output:
+    | id | drink             |
+    | -- | ----------------- |
+    | 9  | Rum and Coke      |
+    | 6  | Rum and Coke      |
+    | 7  | Rum and Coke      |
+    | 3  | St Germain Spritz |
+    | 1  | Orange Margarita  |
+    | 2  | Orange Margarita  |
