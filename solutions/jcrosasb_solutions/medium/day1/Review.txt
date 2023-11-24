@@ -1,0 +1,140 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 01
+Observations: --
+Pass: ✅
+Execution Time: 1331 ms
+Performance: Low
+
+Exercise 02
+Observations: Runtime Error. Check the functions and subqueries.
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Output: Runtime Error
+
+Exercise 03
+Observations: --
+Pass: ✅
+Execution Time: 734 ms
+Performance: Standard
+
+Exercise 04
+Observations: Check the name of the columns
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail test:
+Input Data:
+    Table: Logs
+    | id | num |
+    | -- | --- |
+    | 1  | 3   |
+    | 2  | 3   |
+    | 3  | 3   |
+    | 4  | 3   |
+
+Your Output:
+    | ConsecutiveNums |
+    | --------------- |
+    | 3               |
+    | 3               |
+
+Expected Output:
+    | ConsecutiveNums |
+    | --------------- |
+    | 3               |
+
+Exercise 05
+Observations: --
+Pass: ✅
+Execution Time: 1294 ms
+Performance: Standard
+
+Exercise 06
+Observations: --
+Pass: ✅
+Execution Time: 927 ms
+Performance: Low
+
+Exercise 07
+Observations: There is no solution query to check!
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 08
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: SurveyLog
+    | id | action | question_id | answer_id | q_num | timestamp |
+    | -- | ------ | ----------- | --------- | ----- | --------- |
+
+Your Output:
+    | SURVEY_LOG |
+    | ---------- |
+    | null       |
+
+Expected Output:
+    | survey_log |
+    | ---------- |
+
+Exercise 09
+Observations: --
+Pass: ✅
+Execution Time: 1553 ms
+Performance: Low
+
+Exercise 10
+Observations: TO_CHAR isn't really needed.
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Insurance
+    | pid | tiv_2015 | tiv_2016 | lat  | lon  |
+    | --- | -------- | -------- | ---- | ---- |
+    | 1   | 224.17   | 952.73   | 32.4 | 20.2 |
+    | 2   | 224.17   | 900.66   | 52.4 | 32.7 |
+    | 3   | 824.61   | 645.13   | 72.4 | 45.2 |
+    | 4   | 424.32   | 323.66   | 12.4 | 7.7  |
+    | 5   | 424.32   | 282.9    | 12.4 | 7.7  |
+    | 6   | 625.05   | 243.53   | 52.5 | 32.8 |
+    | 7   | 424.32   | 968.94   | 72.5 | 45.3 |
+    | 8   | 624.46   | 714.13   | 12.5 | 7.8  |
+    | 9   | 425.49   | 463.85   | 32.5 | 20.3 |
+    | 10  | 624.46   | 776.85   | 12.4 | 7.7  |
+    | 11  | 624.46   | 692.71   | 72.5 | 45.3 |
+    | 12  | 225.93   | 933      | 12.5 | 7.8  |
+    | 13  | 824.61   | 786.86   | 32.6 | 20.3 |
+    | 14  | 824.61   | 935.34   | 52.6 | 32.8 |
+
+Your Output:
+    | TIV_2016 |
+    | -------- |
+    | 1853.39  |
+    | 4734.66  |
+
+Expected Output:
+    | tiv_2016 |
+    | -------- |
+    | 4220.72  |
