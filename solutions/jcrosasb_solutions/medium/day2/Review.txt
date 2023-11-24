@@ -1,0 +1,92 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 11
+Observations: --
+Pass: ✅
+Execution Time: 740 ms
+Performance: High
+
+Exercise 12
+Observations: --
+Pass: ✅
+Execution Time: 1056 ms
+Performance: Standard
+
+Exercise 13
+Observations: --
+Pass: ✅
+Execution Time: 1101 ms
+Performance: Low
+
+Exercise 14
+Observations: --
+Pass: ✅
+Execution Time: 1488 ms
+Performance: Low
+
+Exercise 15
+Observations: --
+Pass: ✅
+Execution Time: 1569 ms
+Performance: Low
+
+Exercise 16
+Observations: --
+Pass: ✅
+Execution Time: 2448 ms
+Performance: Low
+
+Exercise 17
+Observations: --
+Pass: ✅
+Execution Time: 1653 ms
+Performance: Low
+
+Exercise 18
+Observations: --
+Pass: ✅
+Execution Time: 1086 ms
+Performance: Standard
+
+Exercise 19
+Observations: Time Expression contains timestamps of type 00:00:00
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 20
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Activity
+    | player_id | device_id | event_date | games_played |
+    | --------- | --------- | ---------- | ------------ |
+    | 1         | 2         | 2016-03-01 | 5            |
+    | 1         | 2         | 2016-03-02 | 1            |
+    | 3         | 1         | 2016-01-02 | 10           |
+    | 3         | 4         | 2016-01-03 | 15           |
+
+Your Output:
+    | FRACTION |
+    | -------- |
+    | 0.5      |
+    | 1.5      |
+
+Expected Output:
+    | fraction |
+    | -------- |
+    | 1        |

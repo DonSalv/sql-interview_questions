@@ -1,0 +1,73 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 21
+Observations: --
+Pass:  ✅
+Execution Time: 1179 ms
+Performance: Top
+
+Exercise 22
+Observations: Time Expression contains timestamps of type 00:00:00
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 23
+Observations: --
+Pass: ✅
+Execution Time: 938 ms
+Performance: Standard
+
+Exercise 24
+Observations: --
+Pass: ✅
+Execution Time: 2181 ms
+Performance: Low
+
+Exercise 25
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test: View the fail_case_exercise_25.txt file
+
+Exercise 26
+Observations: --
+Pass: ✅
+Execution Time: 993 ms
+Performance: Standard
+
+Exercise 27
+Observations: Time Expression contains timestamps of type 00:00:00
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 28
+Observations: --
+Pass: ✅
+Execution Time: 1277 ms
+Performance: Low
+
+Exercise 29
+Observations: The TO_CHAR isn't needed.
+Pass: ✅
+Execution Time: 1182 ms
+Performance: Standard
+
+Exercise 30
+Observations: Checkout the order of the outputs
+Pass: ⛔
+Execution Time: --
+Performance: --
