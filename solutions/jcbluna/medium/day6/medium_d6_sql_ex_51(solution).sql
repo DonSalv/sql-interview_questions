@@ -32,7 +32,8 @@ INSERT INTO Products (product_id, product_name, price) VALUES ('3', 'screen', '6
 INSERT INTO Products (product_id, product_name, price) VALUES ('4', 'hard disk', '450');
 
 -- Solve the exercise
-SELECT product_name, product_id, order_id, order_date
+-- Fix the date format of the field order_date
+SELECT product_name, product_id, order_id, TO_CHAR(order_date,'YYYY-MM-DD') AS order_date
 FROM(SELECT product_name, o.product_id, order_id, order_date,
 DENSE_RANK() OVER (PARTITION BY o.product_id ORDER BY order_date DESC) AS order_recent
 FROM Orders o JOIN Products p

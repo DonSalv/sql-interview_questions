@@ -17,7 +17,9 @@ CONNECT BY ROWNUM <= NVL((SELECT MAX(customer_id) FROM Customers),100))
 SELECT customer_id AS ids
 FROM AllCustomers
 -- 2. Take all the customer_ids not in the Customers table
-WHERE customer_id NOT IN (SELECT customer_id FROM Customers);
+WHERE customer_id NOT IN (SELECT customer_id FROM Customers)
+-- Fix the correct ordering
+ORDER BY ids;
 
 -- Drop unused tables
 DROP TABLE Customers;

@@ -13,7 +13,8 @@ INSERT INTO Calls (from_id, to_id, duration) VALUES ('4', '3', '499');
 
 -- Solve the exercise
 -- 2. Count the calls and sum the duration of them.
-SELECT person1, person2, COUNT(duration) AS duration, SUM(duration) AS person2
+-- Fix the column naming
+SELECT person1, person2, COUNT(duration) AS call_count, SUM(duration) AS total_duration
 FROM( -- 1. Order the table calls considering always the person1 as the one with
 -- the smallest id, and person2 being the other one.
 SELECT (CASE WHEN from_id<to_id THEN from_id ELSE to_id END) AS person1,
