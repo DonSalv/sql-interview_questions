@@ -27,7 +27,8 @@ INSERT INTO Orders (order_id, order_date, customer_id, cost) VALUES ('10',TO_DAT
 -- Define the general variable for n most recent orders
 DEFINE num_orders='3'
 
-SELECT customer_name, customer_id, order_id, order_date
+-- Fix: Write the correct format for the date
+SELECT customer_name, customer_id, order_id, TO_CHAR(order_date, 'YYYY-MM-DD') AS order_date
 FROM (SELECT name AS customer_name, o.customer_id, order_id, order_date, 
 -- 1. Create a rank to pick according to the order_date, and
 -- order_id in case of a tie
