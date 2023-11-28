@@ -9,8 +9,9 @@ INSERT INTO Transactions (account_id, day, type, amount) VALUES ('1', TO_DATE('2
 INSERT INTO Transactions (account_id, day, type, amount) VALUES ('2', TO_DATE('2021-12-07','%YYYY-%MM-%DD'), 'Deposit', '7000');
 INSERT INTO Transactions (account_id, day, type, amount) VALUES ('2', TO_DATE('2021-12-12','%YYYY-%MM-%DD'), 'Withdraw', '7000');
 
--- Solve the exercise
-SELECT account_id, day,
+-- Solve the exercise´
+-- Fix the date format of the column day
+SELECT account_id, TO_CHAR(day, 'YYYY-MM-DD') AS day,
 SUM((CASE type WHEN 'Deposit' THEN 1 ELSE -1 END)*amount) OVER(PARTITION BY account_id ORDER BY day) AS balance
 FROM Transactions
 ORDER BY account_id, day;

@@ -26,9 +26,10 @@ INSERT INTO Rounds (interview_id, round_id, score) VALUES ('101', '1', '8');
 
 -- Solve the exercise
 SELECT candidate_id
-FROM Candidates c JOIN Rounds r
+FROM Candidates c LEFT OUTER JOIN Rounds r
 ON(c.interview_id=r.interview_id)
-WHERE years_of_exp>=5
+-- Fix typo in the years of experience
+WHERE years_of_exp>=2
 GROUP BY candidate_id
 HAVING SUM(score)>15;
 

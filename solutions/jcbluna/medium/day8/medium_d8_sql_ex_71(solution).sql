@@ -11,12 +11,20 @@ INSERT INTO Experiments (experiment_id, platform, experiment_name) VALUES ('12',
 INSERT INTO Experiments (experiment_id, platform, experiment_name) VALUES ('18', 'Web', 'Programming');
 
 -- Solve the exercise
-SELECT t.platform, t.experiment_name, NVL(COUNT(experiment_id),0) AS num_experiments
-FROM (SELECT DISTINCT e1.platform, e2.experiment_name
-FROM Experiments e1 CROSS JOIN Experiments e2) t
-LEFT OUTER JOIN Experiments e
-ON(t.platform=e.platform AND t.experiment_name=e.experiment_name)
-GROUP BY t.platform, t.experiment_name;
+WITH ExperimentTypes AS
+(-- New logic to consider all different platforms and experiments
+SELECT *
+FROM(SELECT 'Android' AS platform FROM dual UNION ALL
+SELECT 'IOS' AS platform FROM dual UNION ALL
+SELECT 'Web' AS platform FROM dual) CROSS JOIN
+(SELECT 'Reading' AS experiment_name FROM dual UNION ALL
+SELECT 'Sports' AS experiment_name FROM dual UNION ALL
+SELECT 'Programming' AS experiment_name FROM dual))
+SELECT et.platform, et.experiment_name, NVL(COUNT(e.experiment_id),0) AS num_experiments
+FROM ExperimentTypes et LEFT OUTER JOIN Experiments e
+ON(et.platform=e.platform
+AND et.experiment_name=e.experiment_name)
+GROUP BY et.platform, et.experiment_name;
 
 -- Drop unused table
 DROP TABLE Experiments;

@@ -16,7 +16,8 @@ INSERT INTO Passengers (passenger_id, arrival_time) VALUES ('13', '6');
 INSERT INTO Passengers (passenger_id, arrival_time) VALUES ('14', '7');
 
 -- Solve the exercise
-SELECT bus_id, COUNT(CASE rank_bus_passenger WHEN 1 THEN 1 ELSE NULL END) AS passengers_count
+-- Does not count passengers if the first bus goes before the first passenger arrives
+SELECT bus_id, COUNT(CASE WHEN rank_bus_passenger=1 AND passenger_id IS NOT NULL THEN 1 ELSE NULL END) AS passengers_count
 FROM(SELECT passenger_id, bus_id, DENSE_RANK() OVER (PARTITION BY passenger_id ORDER BY b.arrival_time) AS rank_bus_passenger
 FROM Buses b LEFT OUTER JOIN Passengers p
 ON(p.arrival_time<=b.arrival_time))
