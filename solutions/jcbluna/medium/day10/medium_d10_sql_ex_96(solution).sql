@@ -15,9 +15,13 @@ INSERT INTO Votes (voter, candidate) VALUES ('Evelyn', 'Kathy');
 INSERT INTO Votes (voter, candidate) VALUES ('Arthur', 'Christine');
 
 -- Solve the exercise
+-- Fix: Count the votes of each voter as one
 SELECT candidate
-FROM(SELECT candidate, COUNT(candidate), DENSE_RANK() OVER(ORDER BY COUNT(candidate) DESC) AS cand_rank
+FROM(SELECT candidate, SUM(vote), DENSE_RANK() OVER(ORDER BY SUM(vote) DESC) AS cand_rank
+FROM (SELECT voter, 1/COUNT(voter) AS vote
 FROM Votes
+GROUP BY voter) RIGHT OUTER JOIN Votes
+USING(voter)
 WHERE candidate IS NOT NULL
 GROUP BY candidate)
 WHERE cand_rank=1

@@ -15,9 +15,10 @@ INSERT INTO Files (file_name, content) VALUES ('final.txt', 'The stock exchange 
                                               'investors should follow their instincts and best practices.');
 
 -- Solve the exercise
-SELECT 'bull' AS word, SUM(REGEXP_COUNT(content, ' bull ')) OVER() AS count FROM Files
+-- Fix: Count the number of files where the words appear, not how many times the word appears.
+SELECT 'bull' AS word, SUM(CASE WHEN content LIKE '% bull %' THEN 1 ELSE 0 END) OVER() AS count FROM Files
 UNION
-SELECT 'bear' AS word, SUM(REGEXP_COUNT(content, ' bear ')) OVER() AS count FROM Files;
+SELECT 'bear' AS word, SUM(CASE WHEN content LIKE '% bear %' THEN 1 ELSE 0 END) OVER() AS count FROM Files;
 
 -- Drop unused tables
 DROP TABLE Files;

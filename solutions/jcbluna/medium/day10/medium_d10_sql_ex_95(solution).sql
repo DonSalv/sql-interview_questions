@@ -22,7 +22,9 @@ INSERT INTO Passengers (passenger_id, flight_id) VALUES ('107', '3');
 SELECT f.flight_id, (CASE WHEN capacity >COUNT(passenger_id) THEN COUNT(passenger_id)
 ELSE capacity END) AS booked_cnt, (CASE WHEN COUNT(passenger_id)>capacity  THEN COUNT(passenger_id)-capacity
 ELSE 0 END) AS waitlist_cnt
-FROM Passengers p JOIN Flights f
+-- Use a right outer join to display the flights eventough they
+-- don't have passengers
+FROM Passengers p RIGHT OUTER JOIN Flights f
 ON(f.flight_id=p.flight_id)
 GROUP BY f.flight_id, capacity
 ORDER BY f.flight_id;

@@ -16,7 +16,9 @@ WITH IdUsers AS
 FROM Users)
 SELECT DISTINCT iu1.user_id
 FROM IdUsers iu1 JOIN IdUsers iu2
-ON(iu1.id<iu2.id AND iu2.created_at BETWEEN
+-- Fix the JOIN condition
+ON(iu1.user_id=iu2.user_id 
+AND iu1.id!=iu2.id AND iu2.created_at BETWEEN
 iu1.created_at AND iu1.created_at+7);
 
 -- Drop unused table

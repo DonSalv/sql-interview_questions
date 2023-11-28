@@ -22,7 +22,8 @@ INSERT INTO Steps (user_id, steps_count, steps_date) VALUES ('6', '191', TO_DATE
 INSERT INTO Steps (user_id, steps_count, steps_date) VALUES ('6', '303', TO_DATE('2021-09-05','%YYYY-%MM-%DD'));
 
 -- Solve the exercise
-SELECT user_id, steps_date, rolling_average
+-- Fix the date format of the column steps_date
+SELECT user_id, TO_CHAR(steps_date,'YYYY-MM-DD') AS steps_date, rolling_average
 FROM(SELECT user_id, steps_date, 
 -- 3. Calculate the rolling average
 ROUND(AVG(steps_count) OVER(PARTITION BY user_id, start_streak ORDER BY steps_date ROWS BETWEEN 2 PRECEDING AND CURRENT ROW),2) AS rolling_average, groups_streak

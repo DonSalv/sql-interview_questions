@@ -15,9 +15,11 @@ INSERT INTO Delivery (delivery_id, customer_id, order_date, customer_pref_delive
 INSERT INTO Delivery (delivery_id, customer_id, order_date, customer_pref_delivery_date) VALUES ('10', '2', TO_DATE('2019-08-04','%YYYY-%MM-%DD'), TO_DATE('2019-08-18','%YYYY-%MM-%DD'));
 
 -- Solve the exercise
-SELECT order_date, ROUND(SUM((CASE WHEN order_date=customer_pref_delivery_date THEN 1 ELSE 0 END))*100/COUNT(delivery_id),2) AS immediate_percentage
+-- Fix the date format of the column order_date
+SELECT TO_CHAR(order_date, 'YYYY-MM-DD') AS order_date,
+ROUND(SUM((CASE WHEN order_date=customer_pref_delivery_date THEN 1 ELSE 0 END))*100/COUNT(delivery_id),2) AS immediate_percentage
 FROM Delivery
-GROUP BY order_date
+GROUP BY TO_CHAR(order_date, 'YYYY-MM-DD')
 ORDER BY order_date;
 
 -- Drop unused table
