@@ -47,9 +47,10 @@ This table has the info of the users of an online shopping website where users c
 
 ## Task
 
-Write a solution to find for each user, the join date and the number of orders they made as a buyer in 2019.
+Write a solution to find for each seller if they sell their favorite brand. Use boolean values `yes` if the favorite 
+brand was sold or `no` for other case.
 
-**Return** the result table in any order.
+**Return** the result table order `by seller_id`.
 
 ## Description of the Solution ##
 
