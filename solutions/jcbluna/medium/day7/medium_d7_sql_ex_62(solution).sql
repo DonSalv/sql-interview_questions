@@ -32,8 +32,9 @@ UNION ALL
 SELECT away_team_id AS team_id, away_team_points AS points, away_team_goals AS goals_for, home_team_goals AS goals_against
 FROM MatchesPoint)
 -- 3. Aggregate the values from the unpivoted table
-SELECT team_name, COUNT(team_id) AS matches_played, SUM(points) AS points, SUM(goals_for) AS goals_for,
-SUM(goals_against) AS goals_for, SUM(goals_for)-SUM(goals_against) AS goal_diff
+-- Fix typos in column names
+SELECT team_name, COUNT(team_id) AS matches_played, SUM(points) AS points, SUM(goals_for) AS goal_for,
+SUM(goals_against) AS goal_against, SUM(goals_for)-SUM(goals_against) AS goal_diff
 FROM Teams JOIN Points
 USING(team_id)
 GROUP BY team_name

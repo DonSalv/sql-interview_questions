@@ -31,7 +31,8 @@ SELECT t.account_id, month,SUM(real_amount) AS total_amount,
 -- if the next month registered is the next calendar month
 (CASE WHEN SUM(real_amount)>max_income AND ADD_MONTHS(month,1)=NVL(LEAD(month,1) OVER(PARTITION BY t.account_id ORDER BY month),ADD_MONTHS(month,1)) THEN 1 ELSE NULL END) AS surpass
 FROM(-- 1. Truncate all days to the month
-SELECT account_id, TRUNC(day,'MM') AS month, (CASE type WHEN 'Creditor' THEN 1 ELSE -1 END)*amount AS real_amount
+-- Don't consider Debtor transactions as substractions
+SELECT account_id, TRUNC(day,'MM') AS month, (CASE type WHEN 'Creditor' THEN amount ELSE 0 END) AS real_amount
 FROM Transactions) t JOIN Accounts a
 ON(t.account_id=a.account_id)
 GROUP BY t.account_id, month,max_income))
