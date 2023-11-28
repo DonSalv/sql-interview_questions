@@ -15,7 +15,8 @@ SELECT DISTINCT p1.user_id
 FROM Purchases p1 JOIN Purchases p2
 ON(p1.user_id=p2.user_id
 AND p2.purchase_date BETWEEN p1.purchase_date AND p1.purchase_date+7
-AND p1.purchase_id<p2.purchase_id)
+-- Fix the restriction that the purchase id just need to be different 
+AND p1.purchase_id!=p2.purchase_id)
 ORDER BY p1.user_id;
 
 -- Drop unused table

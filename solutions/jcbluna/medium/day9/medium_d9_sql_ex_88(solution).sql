@@ -12,7 +12,8 @@ INSERT INTO Students (student_id, department_id, mark) VALUES ('3', '1', '530');
 -- Solve the exercise
 SELECT student_id, department_id, 
 (CASE WHEN students_dept!=1 THEN ROUND((student_rank-1)*100/(students_dept-1),2) ELSE 0 END) AS percentage
-FROM(SELECT student_id, department_id, mark, DENSE_RANK() OVER (PARTITION BY department_id ORDER BY mark DESC) AS student_rank,
+-- Use the analytic function RANK instead of DENSE_RANK
+FROM(SELECT student_id, department_id, mark, RANK() OVER (PARTITION BY department_id ORDER BY mark DESC) AS student_rank,
 COUNT(student_id) OVER (PARTITION BY department_id) AS students_dept
 FROM Students);
 

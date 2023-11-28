@@ -12,7 +12,8 @@ INSERT INTO Weather (city_id, day, degree) VALUES ('3', TO_DATE('2022-02-07','%Y
 INSERT INTO Weather (city_id, day, degree) VALUES ('3', TO_DATE('2022-12-07','%YYYY-%MM-%DD'), '-6');
 
 -- Solve the exercise
-SELECT city_id, day, degree
+-- Fix the date format fot the column day
+SELECT city_id, TO_CHAR(day,'YYYY-MM-DD') AS day, degree
 FROM(SELECT city_id, day, degree, DENSE_RANK() OVER(PARTITION BY city_id ORDER BY degree DESC, day) AS deg_rank
 FROM Weather)
 WHERE deg_rank=1
