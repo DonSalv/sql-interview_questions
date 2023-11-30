@@ -17,27 +17,38 @@ INSERT INTO Passengers (passenger_id, arrival_time) VALUES ('14', '6');
 INSERT INTO Passengers (passenger_id, arrival_time) VALUES ('15', '7');
 
 -- Solve the exercise
-
--- I think this will not work any time, but I'm done with this exercise
--- it has been really tough with the constraints of Oracle SQL
--- and I need more time to think about it, I've seen some solutions of
--- this problem with MySQL that apply variables that can be updated
--- on the go while the query is executing (which is not possible in Oracle)
--- source: https://leetcode.ca/2022-02-14-2153-The-Number-of-Passengers-in-Each-Bus-II/
--- as well I found another solution that seems to work with a recursive implementation
--- in Oracle, source: https://dba.stackexchange.com/questions/321392/how-do-i-write-a-query-that-places-passengers-on-buses-if-there-is-capacity 
--- However, in my version (Oracle IDE 19.1.0.094.2042) it doesn't run.
-SELECT bus_id, passengers_count+NVL(LAG(passengers_left,1) OVER(ORDER BY bus_arrival_time),0) AS passengers_cnt
-FROM(SELECT bus_id, bus_arrival_time, capacity, 
-(CASE WHEN capacity<COUNT(CASE WHEN rank_bus_passenger=1 AND passenger_id IS NOT NULL THEN 1 ELSE NULL END) THEN capacity
-ELSE COUNT(CASE WHEN rank_bus_passenger=1 AND passenger_id IS NOT NULL THEN 1 ELSE NULL END) END) passengers_count,
-(CASE WHEN capacity>=COUNT(CASE WHEN rank_bus_passenger=1 AND passenger_id IS NOT NULL THEN 1 ELSE NULL END) THEN 0
-ELSE COUNT(CASE WHEN rank_bus_passenger=1 AND passenger_id IS NOT NULL THEN 1 ELSE NULL END)-capacity END) passengers_left
-FROM(SELECT passenger_id, bus_id, capacity, b.arrival_time AS bus_arrival_time, DENSE_RANK() OVER (PARTITION BY passenger_id ORDER BY b.arrival_time) AS rank_bus_passenger
+WITH BusPassengers AS
+(SELECT ROWNUM AS bus_order, bus_id, capacity, passengers_bef
+FROM(SELECT bus_id, capacity, COUNT(CASE WHEN rank_bus_passenger=1 AND
+passenger_id IS NOT NULL THEN 1 ELSE NULL END) AS passengers_bef
+FROM(SELECT passenger_id, bus_id,b.arrival_time AS bus_arrival_time, capacity,
+DENSE_RANK() OVER (PARTITION BY passenger_id ORDER BY b.arrival_time) AS
+rank_bus_passenger
 FROM Buses b LEFT OUTER JOIN Passengers p
 ON(p.arrival_time<=b.arrival_time))
 GROUP BY bus_id, capacity, bus_arrival_time
-ORDER BY bus_arrival_time);
+ORDER BY bus_arrival_time, bus_id)),
+bus_info(bus_order, bus_id, capacity, passengers_bef, passengers_wait,
+passengers_onboard) AS (
+SELECT bus_order, bus_id,
+capacity,
+passengers_bef,
+CASE WHEN passengers_bef > capacity THEN passengers_bef - capacity ELSE 0 END,
+CASE WHEN passengers_bef > capacity THEN capacity ELSE passengers_bef END
+FROM BusPassengers
+WHERE bus_order = 1
+UNION ALL
+SELECT b.bus_order, b.bus_id,
+b.capacity,
+b.passengers_bef + bi.passengers_wait,
+CASE WHEN b.passengers_bef + bi.passengers_wait > b.capacity THEN
+b.passengers_bef + bi.passengers_wait - b.capacity ELSE 0 END,
+CASE WHEN b.passengers_bef + bi.passengers_wait > b.capacity THEN b.capacity
+ELSE b.passengers_bef + bi.passengers_wait END
+FROM BusPassengers b
+JOIN bus_info bi ON (b.bus_order = bi.bus_order + 1)
+)
+SELECT bus_id,passengers_onboard AS passengers_cnt FROM bus_info;
 
 
 
