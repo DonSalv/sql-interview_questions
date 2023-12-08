@@ -1,0 +1,216 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 41
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Ads
+    | ad_id | user_id | action  |
+    | ----- | ------- | ------- |
+    | 9     | 8       | Viewed  |
+    | 9     | 4       | Ignored |
+    | 9     | 9       | Viewed  |
+    | 15    | 9       | Viewed  |
+    | 4     | 12      | Viewed  |
+    | 9     | 15      | Viewed  |
+    | 1     | 8       | Clicked |
+    | 6     | 2       | Clicked |
+    | 15    | 5       | Clicked |
+    | 9     | 7       | Ignored |
+
+Your Output:
+    | AD_ID | CTR |
+    | ----- | --- |
+    | 6     | 100 |
+    | 1     | 100 |
+    | 15    | 50  |
+    | 9     | 0   |
+    | 4     | 0   |
+
+Expected Output:
+    | ad_id | ctr |
+    | ----- | --- |
+    | 1     | 100 |
+    | 6     | 100 |
+    | 15    | 50  |
+    | 4     | 0   |
+    | 9     | 0   |
+
+Exercise 42
+Observations: --
+Pass: ✅
+Execution Time: 2908 ms
+Performance: Low
+
+Exercise 43
+Observations: --
+Pass: ✅
+Execution Time: 1251 ms
+Performance: High
+
+Exercise 44
+Observations: --
+Pass: ✅
+Execution Time: 1501 ms
+Performance: Top
+
+Exercise 45
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Users
+    | id | name  |
+    | -- | ----- |
+    | 1  | Alice |
+    | 2  | Bob   |
+    | 3  | Alex  |
+    | 19 | Alice |
+
+    Table: Rides
+    | id | user_id | distance |
+    | -- | ------- | -------- |
+    | 1  | 1       | 120      |
+    | 2  | 2       | 317      |
+    | 3  | 3       | 222      |
+    | 4  | 7       | 100      |
+    | 5  | 13      | 312      |
+    | 9  | 7       | 230      |
+
+Your Output
+    | NAME  | TRAVELLED_DISTANCE |
+    | ----- | ------------------ |
+    | Bob   | 317                |
+    | Alex  | 222                |
+    | Alice | 120                |
+
+Expected Output:
+    | name  | travelled_distance |
+    | ----- | ------------------ |
+    | Bob   | 317                |
+    | Alex  | 222                |
+    | Alice | 120                |
+    | Alice | 0                  |
+
+Exercise 46
+Observations: --
+Pass: ✅
+Execution Time: 1327 ms
+Performance: Standard
+
+Exercise 47
+Observations: Do not use the Union function in this case. Reading the tables separately causes troubles
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 48
+Observations: Do not use the LISTAGG and DISTINCT function combination. It causes troubles
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 49
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: TVProgram
+    | program_date     | content_id | channel         |
+    | ---------------- | ---------- | --------------- |
+    | 2020-06-24 12:00 | 5          | Disney Ch       |
+    | 2020-06-25 19:00 | 5          | Disney Ch       |
+    | 2020-05-12 11:00 | 13         | Cartoon Network |
+    | 2020-05-03 09:00 | 4          | Disney Ch       |
+    | 2020-05-04 11:00 | 1          | LC-Channel      |
+    | 2020-07-11 12:00 | 13         | Cartoon Network |
+    | 2020-06-16 09:00 | 1          | LC-Channel      |
+    | 2020-06-20 08:00 | 3          | LC-Channel      |
+
+    Table: Content
+    | content_id | title                | Kids_content | content_type |
+    | ---------- | -------------------- | ------------ | ------------ |
+    | 1          | Leetcode Movie       | N            | Movies       |
+    | 3          | Database Sols        | N            | Series       |
+    | 4          | Aladdin              | Y            | Movies       |
+    | 5          | Cinderela            | Y            | Movies       |
+    | 13         | Courage Cowardly Dog | N            | Series       |
+
+Your Output:
+    | TITLE     |
+    | --------- |
+    | Cinderela |
+    | Cinderela |
+
+Expected Output:
+    | TITLE     |
+    | --------- |
+    | Cinderela |
+
+Exercise 50
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Customers
+    | customer_id | name     | country |
+    | ----------- | -------- | ------- |
+    | 1           | Winston  | USA     |
+    | 2           | Jonathan | Peru    |
+    | 3           | Moustafa | Egypt   |
+
+    Table: Product
+    | product_id | description | price |
+    | ---------- | ----------- | ----- |
+    | 10         | LC Phone    | 300   |
+    | 20         | LC T-Shirt  | 10    |
+    | 30         | LC Book     | 45    |
+    | 40         | LC Keychain | 2     |
+
+    Table: Orders
+    | order_id | customer_id | product_id | order_date | quantity |
+    | -------- | ----------- | ---------- | ---------- | -------- |
+    | 1        | 1           | 10         | 2020-06-10 | 1        |
+    | 2        | 1           | 20         | 2020-07-01 | 1        |
+    | 3        | 1           | 30         | 2020-07-08 | 2        |
+    | 4        | 2           | 10         | 2020-06-15 | 2        |
+    | 5        | 2           | 40         | 2020-07-01 | 10       |
+    | 6        | 3           | 20         | 2020-06-24 | 2        |
+    | 7        | 3           | 30         | 2020-06-25 | 2        |
+    | 9        | 3           | 30         | 2020-05-08 | 3        |
+    | 10       | 3           | 40         | 2021-06-08 | 200      |
+    | 11       | 3           | 40         | 2022-07-08 | 200      |
+
+Your Output:
+    | CUSTOMER_ID | NAME     |
+    | ----------- | -------- |
+    | 1           | Winston  |
+    | 3           | Moustafa |
+
+Expected Output:
+    | customer_id | name    |
+    | ----------- | ------- |
+    | 1           | Winston |
