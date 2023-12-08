@@ -1,0 +1,73 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 11
+Observations: --
+Pass: ✅
+Execution Time: 848 ms
+Performance: Standard
+
+Exercise 12
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Runtime Error: ORA-01476: divisor is equal to zero
+
+Exercise 13
+Observations: --
+Pass: ✅
+Execution Time: 2257 ms
+Performance: Standard
+
+Exercise 14
+Observations: --
+Pass: ✅
+Execution Time: 1145 ms
+Performance: Low
+
+Exercise 15
+Observations: --
+Pass: ✅
+Execution Time: 958 ms
+Performance: Standard
+
+Exercise 16
+Observations: --
+Pass: ✅
+Execution Time: 1079 ms
+Performance: Standard
+
+Exercise 17
+Observations: --
+Pass: ✅
+Execution Time: 716 ms
+Performance: Standard
+
+Exercise 18
+Observations: --
+Pass: ✅
+Execution Time: 964 ms
+Performance: Low
+
+Exercise 19
+Observations: --
+Pass: ✅
+Execution Time: 1151 ms
+Performance: Low
+
+Exercise 20
+Observations: --
+Pass: ✅
+Execution Time: 2278 ms
+Performance: Low
