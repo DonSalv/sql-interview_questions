@@ -1,0 +1,148 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 01
+Observations: --
+Pass: ✅
+Execution Time: 970 ms
+Performance: Standard
+
+Exercise 02
+Observations: Observe the name of the columns.
+Pass: ✅
+Execution Time: 1173 ms
+Performance: Low
+
+Exercise 03
+Observations: --
+Pass: ✅
+Execution Time: 1219 ms
+Performance: Low
+
+Exercise 04
+Observations: Observe the name of the columns
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Failed Test:
+Input Data
+    Table: Customers
+    | id | name  |
+    | -- | ----- |
+    | 1  | James |
+    | 2  | James |
+
+    Table: Orders
+    | id | customerId |
+    | -- | ---------- |
+
+Your Output:
+    | CUSTOMERS |
+    | --------- |
+    | James     |
+
+Expected Output:
+    | Customers |
+    | --------- |
+    | James     |
+    | James     |
+
+Exercise 05
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test
+Input Data:
+    Table: Person
+    | id | email       |
+    | -- | ----------- |
+    | 2  | abc@efg.com |
+    | 1  | abc@efg.com |
+
+Your Output:
+    | ID | EMAIL       |
+    | -- | ----------- |
+    | 2  | abc@efg.com |
+
+Expected Output:
+    | id | email       |
+    | -- | ----------- |
+    | 1  | abc@efg.com |
+
+Exercise 06
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Weather
+    | id | recordDate | temperature |
+    | -- | ---------- | ----------- |
+    | 1  | 2000-12-14 | 3           |
+    | 2  | 2000-12-16 | 5           |
+
+Your Output:
+    | ID |
+    | -- |
+    | 2  |
+
+Expected Output:
+    | id |
+    | -- |
+
+Exercise 07
+Observations: --
+Pass: ✅
+Execution Time: 1897 ms
+Performance: Low
+
+Exercise 08
+Observations: --
+Pass: ✅
+Execution Time: 1200 ,s
+Performance: Low
+
+Exercise 09
+Observations: Avoid using the FETCH FIRST command in your queries
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 10
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: World
+    | name        | continent | area    | population | gdp         |
+    | ----------- | --------- | ------- | ---------- | ----------- |
+    | Afghanistan | Asia      | 3000000 | 25500100   | 20343000000 |
+    | Albania     | Europe    | 28748   | 25000000   | 12960000000 |
+
+Your Output:
+    | NAME        | POPULATION | AREA    |
+    | ----------- | ---------- | ------- |
+    | Afghanistan | 25500100   | 3000000 |
+
+Expected Output:
+    | name        | population | area    |
+    | ----------- | ---------- | ------- |
+    | Afghanistan | 25500100   | 3000000 |
+    | Albania     | 25000000   | 28748   |
