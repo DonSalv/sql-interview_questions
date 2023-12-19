@@ -1,0 +1,209 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 71
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Employee
+    | employee_id | department_id | primary_flag |
+    | ----------- | ------------- | ------------ |
+    | 1           | 1             | N            |
+    | 1           | 2             | N            |
+    | 2           | 1             | Y            |
+    | 2           | 2             | N            |
+    | 3           | 3             | N            |
+    | 4           | 2             | N            |
+    | 4           | 3             | Y            |
+    | 4           | 4             | N            |
+
+Your Output:
+    | EMPLOYEE_ID | DEPARTMENT_ID |
+    | ----------- | ------------- |
+    | 1           | null          |
+    | 2           | 1             |
+    | 3           | 3             |
+    | 4           | 3             |
+
+Expected Output:
+    | employee_id | department_id |
+    | ----------- | ------------- |
+    | 2           | 1             |
+    | 3           | 3             |
+    | 4           | 3             |
+
+Exercise 72
+Observations: --
+Pass: ✅
+Execution Time: 1252 ms
+Performance: Low
+
+Exercise 73
+Observations: --
+Pass: ✅
+Execution Time: 1793 ms
+Performance: Standard
+
+Exercise 74
+Observations: --
+Pass: ✅
+Execution Time: 1105 ms
+Performance: Top
+
+Exercise 75
+Observations: --
+Pass: ✅
+Execution Time: 1107 ms
+Performance: Standard
+
+Exercise 76
+Observations: Observe the ordering columns
+Pass: ✅
+Execution Time: 1382 ms
+Performance: Standard
+
+Exercise 77
+Observations: --
+Pass: ✅
+Execution Time: 1072 ms
+Performance: High
+
+Exercise 78
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Signups
+    | user_id | time_stamp          |
+    | ------- | ------------------- |
+    | 16      | 2020-04-19 04:26:57 |
+    | 12      | 2020-04-05 00:38:03 |
+    | 15      | 2020-09-02 07:27:43 |
+    | 7       | 2020-05-10 04:39:09 |
+    | 6       | 2020-04-04 23:00:07 |
+    | 1       | 2020-01-28 03:41:21 |
+    | 3       | 2020-08-30 16:43:02 |
+    | 18      | 2020-08-28 20:04:13 |
+    | 11      | 2020-02-10 16:46:52 |
+
+    Table: Confirmations
+    | user_id | time_stamp          | action    |
+    | ------- | ------------------- | --------- |
+    | 3       | 2021-07-09 01:37:37 | timeout   |
+    | 12      | 2020-08-10 06:49:26 | confirmed |
+    | 15      | 2020-11-26 03:53:30 | confirmed |
+    | 15      | 2020-04-09 16:28:20 | timeout   |
+    | 1       | 2020-05-16 22:20:24 | timeout   |
+    | 1       | 2020-09-28 06:27:34 | timeout   |
+    | 15      | 2020-04-17 14:32:15 | confirmed |
+    | 16      | 2020-03-29 05:07:21 | timeout   |
+    | 15      | 2020-06-07 12:33:58 | timeout   |
+    | 6       | 2020-04-04 06:09:36 | confirmed |
+    | 7       | 2020-05-17 04:00:18 | timeout   |
+    | 12      | 2020-09-08 13:09:57 | timeout   |
+    | 11      | 2020-09-01 08:47:34 | timeout   |
+    | 3       | 2021-07-23 10:42:58 | timeout   |
+    | 7       | 2020-08-03 08:19:56 | confirmed |
+    | 16      | 2020-10-07 15:30:49 | timeout   |
+    | 12      | 2020-06-01 06:55:54 | confirmed |
+    | 16      | 2020-11-01 22:03:19 | timeout   |
+    | 18      | 2020-10-16 15:50:17 | confirmed |
+    | 3       | 2020-08-22 06:19:19 | timeout   |
+    | 1       | 2020-04-12 23:29:44 | confirmed |
+    | 12      | 2020-11-12 07:43:27 | confirmed |
+    | 12      | 2020-08-21 18:37:12 | timeout   |
+    | 7       | 2020-03-23 08:39:58 | confirmed |
+    | 15      | 2020-12-12 10:54:01 | timeout   |
+    | 6       | 2020-11-02 09:02:54 | timeout   |
+    | 6       | 2020-11-16 21:01:21 | timeout   |
+    | 12      | 2020-06-14 01:57:14 | timeout   |
+    | 1       | 2020-04-02 08:53:15 | confirmed |
+    | 16      | 2020-09-03 23:00:58 | timeout   |
+    | 18      | 2020-10-27 10:06:33 | timeout   |
+    | 6       | 2021-07-12 14:42:40 | confirmed |
+    | 11      | 2020-11-07 11:16:24 | timeout   |
+    | 3       | 2020-01-12 14:54:19 | timeout   |
+    | 1       | 2020-07-06 17:39:03 | timeout   |
+    | 18      | 2020-12-08 13:42:08 | timeout   |
+    | 11      | 2020-05-27 16:22:08 | timeout   |
+    | 11      | 2020-10-23 07:38:41 | timeout   |
+    | 11      | 2020-10-23 19:28:41 | timeout   |
+    | 7       | 2020-06-13 01:19:57 | timeout   |
+    | 1       | 2020-03-27 14:33:06 | timeout   |
+    | 3       | 2020-02-23 20:45:19 | confirmed |
+    | 15      | 2020-06-07 12:55:13 | timeout   |
+    | 18      | 2020-01-23 14:53:58 | timeout   |
+    | 16      | 2020-08-27 10:25:38 | confirmed |
+    | 12      | 2020-05-13 20:18:33 | timeout   |
+
+Your Output:
+    | USER_ID |
+    | ------- |
+
+Expected Output:
+    | user_id |
+    | ------- |
+    | 11      |
+    | 15      |
+
+Exercise 79
+Observations: --
+Pass: ✅
+Execution Time: 1415 ms
+Performance: Low
+
+Exercise 80
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Employees
+    | employee_id | name   | manager_id | salary |
+    | ----------- | ------ | ---------- | ------ |
+    | 18          | Drew   | null       | 41568  |
+    | 20          | Ronan  | 3          | 65209  |
+    | 10          | Jaxton | 15         | 96667  |
+    | 13          | Louie  | 16         | 6801   |
+    | 17          | Mylah  | 20         | 26540  |
+    | 21          | Kenia  | 15         | 98690  |
+    | 7           | Hadley | 6          | 23590  |
+    | 9           | Hayden | 4          | 90798  |
+    | 2           | Nixon  | null       | 25560  |
+    | 8           | Arthur | 11         | 67027  |
+    | 11          | Brycen | null       | 42570  |
+    | 3           | Noemi  | null       | 87321  |
+    | 14          | Hayden | null       | 4123   |
+    | 19          | Astrid | 20         | 37680  |
+
+Your Output:
+    | EMPLOYEE_ID |
+    | ----------- |
+    | 14          |
+    | 2           |
+    | 7           |
+    | 13          |
+
+Expected Output:
+    | employee_id |
+    | ----------- |
+    | 7           |
+    | 13          |
