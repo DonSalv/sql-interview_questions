@@ -1,0 +1,67 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 91
+Observations: --
+Pass: ✅
+Execution Time: 948 ms
+Performance: Standard
+
+Exercise 92
+Observations: --
+Pass: ✅
+Execution Time: 1612 ms
+Performance: Low
+
+Exercise 93
+Observations: Check spelling of the columns
+Pass: ✅
+Execution Time: 1114 ms
+Performance: Standard
+
+Exercise 94
+Observations: --
+Pass: ✅
+Execution Time: 1123 ms
+Performance: Low
+
+Exercise 95
+Observations: Pay attention to the name of the colums
+Pass: ✅
+Execution Time: 1253 ms
+Performance: Low
+
+Exercise 96
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Salaries
+    | emp_name | department  | salary |
+    | -------- | ----------- | ------ |
+    | Edward   | Engineering | 102000 |
+    | Evelyn   | Marketing   | 53000  |
+    | Johan    | Other       | 3000   |
+
+Your Output:
+    | SALARY_DIFFERENCE |
+    | ----------------- |
+    | 99000             |
+
+Expected Output:
+    | salary_difference |
+    | ----------------- |
+    | 49000             |
+
