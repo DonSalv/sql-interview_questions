@@ -1,0 +1,87 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 51
+Observations: --
+Pass: ✅
+Execution Time: 1773 ms
+Performance: Low
+
+Exercise 52
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Patients
+    | patient_id | patient_name | conditions |
+    | ---------- | ------------ | ---------- |
+    | 1          | Daniel       | SADIAB100  |
+
+Your Output:
+    | PATIENT_ID | PATIENT_NAME | CONDITIONS |
+    | ---------- | ------------ | ---------- |
+    | 1          | Daniel       | SADIAB100  |
+
+Expected Output:
+    | patient_id | patient_name | conditions |
+    | ---------- | ------------ | ---------- |
+
+Exercise 53
+Observations: Pay attention to the ordering columns
+Pass: ✅
+Execution Time: 962 ms
+Performance: standard
+
+Exercise 54
+Observations: --
+Pass: ✅
+Execution Time: 1824 ms
+Performance: Low
+
+Exercise 55
+Observations: Pay attention to the colum name output
+Pass: ✅
+Execution Time: 4287 ms
+Performance: Low
+
+Exercise 56
+Observations: --
+Pass: ✅
+Execution Time: 1810 ms
+Performance: High
+
+Exercise 57
+Observations: --
+Pass: ✅
+Execution Time: 2354 ms
+Performance: Low
+
+Exercise 58
+Observations: --
+Pass: ✅
+Execution Time: 1651 ms
+Performance: High
+
+Exercise 59
+Observations: --
+Pass: ✅
+Execution Time: 5632 ms
+Performance: Low
+
+Exercise 60
+Observations: --
+Pass: ✅
+Execution Time: 1419 ms
+Performance: Standard
