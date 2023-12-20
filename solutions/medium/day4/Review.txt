@@ -1,0 +1,136 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 31
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Queue
+    | person_id | person_name | weight | turn |
+    | --------- | ----------- | ------ | ---- |
+    | 6         | luffy       | 5      | 4    |
+    | 14        | ace         | 16     | 10   |
+    | 15        | sabo        | 9      | 14   |
+    | 7         | zoro        | 11     | 3    |
+    | 9         | sanji       | 10     | 7    |
+    | 4         | nami        | 3      | 11   |
+    | 3         | ussop       | 16     | 15   |
+    | 5         | chopper     | 2      | 2    |
+    | 12        | brooke      | 11     | 5    |
+    | 2         | robin       | 19     | 12   |
+    | 13        | franky      | 17     | 1    |
+    | 11        | shanks      | 15     | 6    |
+    | 1         | kaido       | 22     | 8    |
+    | 8         | edward      | 2      | 9    |
+    | 16        | linlin      | 6      | 13   |
+    | 17        | teach       | 7      | 16   |
+    | 10        | dragon      | 6      | 17   |
+
+Your Output:
+    | PERSON_NAME |
+    | ----------- |
+    | zoro        |
+
+Expected Output:
+    | person_name |
+    | ----------- |
+    | dragon      |
+
+Exercise 32
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+Table: Transactions
+    | id  | country | state    | amount | trans_date |
+    | --- | ------- | -------- | ------ | ---------- |
+    | 100 | CB      | declined | 4000   | 2019-02-04 |
+    | 101 | BB      | approved | 7000   | 2019-02-17 |
+    | 102 | CA      | declined | 6000   | 2019-02-26 |
+    | 103 | AA      | declined | 7000   | 2019-04-01 |
+
+    Table: Chargebacks
+    | trans_id | trans_date |
+    | -------- | ---------- |
+    | 100      | 2019-03-29 |
+    | 102      | 2019-02-28 |
+    | 103      | 2019-05-09 |
+
+Your Output:
+    | MONTH   | COUNTRY | APPROVED_COUNT | APPROVED_AMOUNT | CHARGEBACK_COUNT | CHARGEBACK_AMOUNT |
+    | ------- | ------- | -------------- | --------------- | ---------------- | ----------------- |
+    | 2019-02 | CA      | 1              | 7000            | 1                | 6000              |
+    | 2019-03 | CB      | 0              | 0               | 1                | 4000              |
+    | 2019-05 | AA      | 0              | 0               | 1                | 7000              |
+
+Expected Output:
+    | month   | country | approved_count | approved_amount | chargeback_count | chargeback_amount |
+    | ------- | ------- | -------------- | --------------- | ---------------- | ----------------- |
+    | 2019-02 | BB      | 1              | 7000            | 0                | 0                 |
+    | 2019-03 | CB      | 0              | 0               | 1                | 4000              |
+    | 2019-02 | CA      | 0              | 0               | 1                | 6000              |
+    | 2019-05 | AA      | 0              | 0               | 1                | 7000              |
+
+Exercise 33
+Observations: --
+Pass: ✅
+Execution Time: 1586 ms
+Performance: Standard
+
+Exercise 34
+Observations: --
+Pass: ✅
+Execution Time: 1436 ms
+Performance: Low
+
+Exercise 35
+Observations: --
+Pass: ✅
+Execution Time: 681 ms
+Performance: High
+
+Exercise 36
+Observations: --
+Pass: ✅
+Execution Time: 822 ms
+Performance: Top
+
+Exercise 37
+Observations: The day field shows the timestamp part 00:00:00. Remove it
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 38
+Observations: The visited_on field shows the timestamp part 00:00:00. Remove it
+Pass: ⛔
+Execution Time:
+Performance:
+
+Exercise 39
+Observations: Avoid using the FETCH FIRST 1 ROWS ONLY.
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 40
+Observations: --
+Pass: ✅
+Execution Time: 1300 ms
+Performance: Low
