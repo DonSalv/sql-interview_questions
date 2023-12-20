@@ -1,0 +1,100 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 01
+Observations: --
+Pass: ✅
+Execution Time: 758 ms
+Performance: Standard
+
+Exercise 02
+Observations: --
+Pass: ✅
+Execution Time: 1211 ms
+Performance: Low
+
+Exercise 03
+Observations: --
+Pass: ✅
+Execution Time: 1071 ms
+Performance: Low
+
+Exercise 04
+Observations: --
+Pass: ✅
+Execution Time: 1308 ms
+Performance: Low
+
+Exercise 05
+Observations: --
+Pass: ✅
+Execution Time: 1759 ms
+Performance: Low
+
+Exercise 06
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Employee
+    | id  | name  | department | managerId |
+    | --- | ----- | ---------- | --------- |
+    | 101 | John  | A          | null      |
+    | 102 | Dan   | A          | 101       |
+    | 103 | James | A          | 101       |
+    | 104 | Amy   | A          | 101       |
+    | 105 | Anne  | A          | 101       |
+    | 106 | Ron   | B          | 101       |
+    | 111 | John  | A          | null      |
+    | 112 | Dan   | A          | 111       |
+    | 113 | James | A          | 111       |
+    | 114 | Amy   | A          | 111       |
+    | 115 | Anne  | A          | 111       |
+    | 116 | Ron   | B          | 111       |
+
+Your Output:
+    | NAME |
+    | ---- |
+    | John |
+
+Expected Output:
+    | name |
+    | ---- |
+    | John |
+    | John |
+
+Exercise 07
+Observations: Avoid using the Fetch First ROWS command.
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Exercise 08
+Observations: Avoid using the Fetch First ROWS command.
+Pass: ⛔
+Execution Time:
+Performance:
+
+Exercise 09
+Observations: Pay attention to the ordering of the output.
+Pass: ✅
+Execution Time: 1662 ms
+Performance: Low
+
+Exercise 10
+Observations: --
+Pass: ✅
+Execution Time: 1260 ms
+Performance: Low
