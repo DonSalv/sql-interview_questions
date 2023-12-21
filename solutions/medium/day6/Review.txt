@@ -1,0 +1,106 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 51
+Observations: Your order_date field shows the timestamp 00:00:00 Remove it
+Pass:  ⛔
+Execution Time: --
+Performance: --
+
+Exercise 52
+Observations: --
+Pass: ✅
+Execution Time: 1450 ms
+Performance: Standard
+
+Exercise 53
+Observations: --
+Pass: ✅
+Execution Time: 3716 ms
+Performance: Low
+
+Exercise 54
+Observations: --
+Pass: ✅
+Execution Time: 1258 ms
+Performance: Standard
+
+Exercise 55
+Observations: --
+Pass: ✅
+Execution Time: 799 ms
+Performance: Top
+
+Exercise 56
+Observations: --
+Pass: ✅
+Execution Time: 1158 ms
+Performance: Standard
+
+Exercise 57
+Observations: --
+Pass: ✅
+Execution Time: 1356 ms
+Performance: Top
+
+Exercise 58
+Observations: --
+Pass: ✅
+Execution Time: 1617 ms
+Performance: Low
+
+Exercise 59
+Observations: --
+Pass: ✅
+Execution Time: 2043 ms
+Performance: High
+
+Exercise 60
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Contest
+    | contest_id | gold_medal | silver_medal | bronze_medal |
+    | ---------- | ---------- | ------------ | ------------ |
+    | 190        | 1          | 9            | 5            |
+    | 191        | 2          | 10           | 5            |
+    | 192        | 9          | 2            | 10           |
+    | 193        | 1          | 2            | 5            |
+    | 194        | 5          | 1            | 2            |
+    | 195        | 1          | 2            | 9            |
+    | 196        | 5          | 1            | 2            |
+
+    Table: Users
+    | user_id | mail                             | name     |
+    | ------- | -------------------------------- | -------- |
+    | 9       | C0X_gelleh_ojUra@leetcode.com    | Gelleh   |
+    | 5       | qbR8_benjamin_sh4A@leetcode.com  | Benjamin |
+    | 10      | TwIP_freida_0QN@leetcode.com     | Freida   |
+    | 2       | zZtv_tamar_fXb@leetcode.com      | Tamar    |
+    | 1       | rYS5_menachem_Dr9Va@leetcode.com | Menachem |
+
+Your Output:
+    | NAME     | MAIL                             |
+    | -------- | -------------------------------- |
+    | Menachem | rYS5_menachem_Dr9Va@leetcode.com |
+    | Menachem | rYS5_menachem_Dr9Va@leetcode.com |
+    | Tamar    | zZtv_tamar_fXb@leetcode.com      |
+
+Expected Output:
+    | name     | mail                             |
+    | -------- | -------------------------------- |
+    | Tamar    | zZtv_tamar_fXb@leetcode.com      |
+    | Menachem | rYS5_menachem_Dr9Va@leetcode.com |
