@@ -1,0 +1,110 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 81
+Observations: --
+Pass: ✅
+Execution Time: 849 ms
+Performance: Top
+
+Exercise 82
+Observations: --
+Pass: ✅
+Execution Time: 1535 ms
+Performance: Low
+
+Exercise 83
+Observations: --
+Pass: ✅
+Execution Time: 962 ms
+Performance: Top
+
+Exercise 84
+Observations: --
+Pass: ✅
+Execution Time: 1027 ms
+Performance: Standard
+
+Exercise 85
+Observations: --
+Pass: ✅
+Execution Time: 961 ms
+Performance: Standard
+
+Exercise 86
+Observations: --
+Pass: ✅
+Execution Time: 1302 ms
+Performance: Standard
+
+Exercise 87
+Observations: --
+Pass:  ✅
+Execution Time: 1591 ms
+Performance: Low
+
+Exercise 88
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Students
+    | student_id | department_id | mark |
+    | ---------- | ------------- | ---- |
+    | 2          | 2             | 650  |
+    | 8          | 1             | 820  |
+    | 7          | 1             | 920  |
+    | 1          | 1             | 610  |
+    | 3          | 1             | 530  |
+    | 4          | 1             | 400  |
+    | 5          | 1             | 110  |
+    | 6          | 1             | 90   |
+
+Your Output:
+    | STUDENT_ID | DEPARTMENT_ID | PERCENTAGE         |
+    | ---------- | ------------- | ------------------ |
+    | 7          | 1             | 0                  |
+    | 8          | 1             | 16.666666666666668 |
+    | 1          | 1             | 33.333333333333336 |
+    | 3          | 1             | 50                 |
+    | 4          | 1             | 66.66666666666667  |
+    | 5          | 1             | 83.33333333333333  |
+    | 6          | 1             | 100                |
+    | 2          | 2             | 0                  |
+
+Expected Output:
+    | student_id | department_id | percentage |
+    | ---------- | ------------- | ---------- |
+    | 7          | 1             | 0          |
+    | 8          | 1             | 16.67      |
+    | 1          | 1             | 33.33      |
+    | 3          | 1             | 50         |
+    | 4          | 1             | 66.67      |
+    | 5          | 1             | 83.33      |
+    | 6          | 1             | 100        |
+    | 2          | 2             | 0          |
+
+
+Exercise 89
+Observations: --
+Pass: ✅
+Execution Time: 2189 ms
+Performance: Low
+
+Exercise 90
+Observations: --
+Pass: ✅
+Execution Time: 826 ms
+Performance: Top
