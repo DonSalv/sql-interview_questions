@@ -1,0 +1,250 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 61
+Observations: --
+Pass: ✅
+Execution Time: 1078 ms
+Performance: High
+
+Exercise 62
+Observations: --
+Pass:  ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Teams
+    | team_id | team_name        |
+    | ------- | ---------------- |
+    | 4       | ParisSaintGerman |
+    | 3       | Liverpool        |
+
+    Table: Matches
+    | home_team_id | away_team_id | home_team_goals | away_team_goals |
+    | ------------ | ------------ | --------------- | --------------- |
+
+Your Output:
+    | TEAM_NAME        | MATCHES_PLAYED | POINTS | GOAL_FOR | GOAL_AGAINST | GOAL_DIFF |
+    | ---------------- | -------------- | ------ | -------- | ------------ | --------- |
+    | Liverpool        | 0              | null   | null     | null         | null      |
+    | ParisSaintGerman | 0              | null   | null     | null         | null      |
+
+Expected Output:
+    | team_name | matches_played | points | goal_for | goal_against | goal_diff |
+    | --------- | -------------- | ------ | -------- | ------------ | --------- |
+
+Exercise 63
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Accounts
+    | account_id | max_income |
+    | ---------- | ---------- |
+    | 3          | 21000      |
+    | 4          | 10400      |
+
+    Table: Transactions
+    | transaction_id | account_id | type     | amount | day                 |
+    | -------------- | ---------- | -------- | ------ | ------------------- |
+    | 2              | 3          | Creditor | 107100 | 2021-06-02 11:38:14 |
+    | 4              | 4          | Creditor | 10400  | 2021-06-20 12:39:18 |
+    | 11             | 4          | Debtor   | 58800  | 2021-07-23 12:41:55 |
+    | 1              | 4          | Creditor | 49300  | 2021-05-03 16:11:04 |
+    | 15             | 3          | Debtor   | 75500  | 2021-05-23 14:40:20 |
+    | 10             | 3          | Creditor | 102100 | 2021-06-15 10:37:16 |
+    | 14             | 4          | Creditor | 56300  | 2021-07-21 12:12:25 |
+    | 19             | 4          | Debtor   | 101100 | 2021-05-09 15:21:49 |
+    | 8              | 3          | Creditor | 64900  | 2021-07-26 15:09:56 |
+    | 7              | 3          | Creditor | 90900  | 2021-06-14 11:23:07 |
+
+Your Output:
+    | ACCOUNT_ID |
+    | ---------- |
+
+Expected Output:
+    | account_id |
+    | ---------- |
+    | 3          |
+
+Exercise 64
+Observations: --
+Pass: ✅
+Execution Time: 1794 ms
+Performance: Low
+
+Exercise 65
+Observations: --
+Pass: ✅
+Execution Time: 1101 ms
+Performance: High
+
+Exercise 66
+Observations: --
+Pass: ✅
+Execution Time: 1386 ms
+Performance: Standard
+
+Exercise 67
+Observations: --
+Pass: ✅
+Execution Time: 1600 ms
+Performance: Low
+
+Exercise 68
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+
+Input
+    Table: Friendship
+    | user1_id | user2_id |
+    | -------- | -------- |
+    | 4        | 12       |
+    | 4        | 13       |
+    | 1        | 4        |
+    | 4        | 18       |
+    | 4        | 6        |
+    | 12       | 13       |
+    | 2        | 12       |
+    | 3        | 12       |
+    | 7        | 12       |
+    | 13       | 18       |
+    | 1        | 2        |
+    | 1        | 7        |
+    | 2        | 7        |
+    | 3        | 6        |
+    | 6        | 18       |
+
+Your Output:
+    | USER1_ID | USER2_ID | COMMON_FRIEND |
+    | -------- | -------- | ------------- |
+    | 1        | 12       | 3             |
+
+Expected Output:
+    | user1_id | user2_id | common_friend |
+    | -------- | -------- | ------------- |
+
+Exercise 69
+Observations: --
+Pass: ✅
+Execution Time: 904 ms
+Performance: Top
+
+Exercise 70
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+Table: Schools
+    | school_id | capacity |
+    | --------- | -------- |
+    | 1         | 54       |
+    | 18        | 61       |
+    | 19        | 43       |
+    | 10        | 43       |
+    | 15        | 43       |
+    | 12        | 38       |
+    | 8         | 33       |
+    | 22        | 66       |
+    | 3         | 55       |
+    | 21        | 23       |
+    | 9         | 33       |
+    | 6         | 1        |
+    | 5         | 37       |
+    | 17        | 62       |
+    | 7         | 74       |
+
+    Table: Exam
+    | score | student_count |
+    | ----- | ------------- |
+    | 766   | 22            |
+    | 436   | 37            |
+    | 105   | 83            |
+    | 646   | 27            |
+    | 881   | 7             |
+    | 426   | 40            |
+    | 58    | 85            |
+    | 416   | 41            |
+    | 387   | 45            |
+    | 142   | 81            |
+    | 334   | 51            |
+    | 189   | 77            |
+    | 468   | 35            |
+    | 174   | 78            |
+    | 781   | 19            |
+    | 235   | 64            |
+    | 497   | 32            |
+    | 276   | 58            |
+    | 362   | 49            |
+    | 870   | 8             |
+    | 233   | 75            |
+    | 290   | 54            |
+    | 672   | 26            |
+    | 481   | 35            |
+    | 923   | 2             |
+    | 292   | 51            |
+    | 916   | 5             |
+    | 227   | 75            |
+    | 862   | 12            |
+    | 99    | 83            |
+    | 604   | 29            |
+
+Your Output:
+    | SCHOOL_ID | SCORE |
+    | --------- | ----- |
+    | 1         | 292   |
+    | 3         | 290   |
+    | 5         | 468   |
+    | 6         | -1    |
+    | 7         | 235   |
+    | 8         | 497   |
+    | 9         | 497   |
+    | 10        | 416   |
+    | 12        | 436   |
+    | 15        | 416   |
+    | 17        | 276   |
+    | 18        | 276   |
+    | 19        | 416   |
+    | 21        | 766   |
+    | 22        | 235   |
+
+Expected Output:
+    | school_id | score |
+    | --------- | ----- |
+    | 1         | 290   |
+    | 3         | 290   |
+    | 5         | 436   |
+    | 6         | -1    |
+    | 7         | 235   |
+    | 8         | 497   |
+    | 9         | 497   |
+    | 10        | 416   |
+    | 12        | 436   |
+    | 15        | 416   |
+    | 17        | 276   |
+    | 18        | 276   |
+    | 19        | 416   |
+    | 21        | 766   |
+    | 22        | 235   |
