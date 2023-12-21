@@ -1,0 +1,206 @@
+Summary of observations by exercises:
+
+Observations. Remarks you need to attend for the exercise to behave correctly.
+Pass: The sign ✅ means the query pass the test and ⛔ means the query fail the test. In case of failure
+      the corresponding test where the query fails is showed.
+Execution time: Time it takes to run the query in milliseconds.
+Performance: A scale with the quality of the solution
+    - Top: The query is optimal.
+    - High: The query performs over the mean.
+    - Standard: The query can be optimized.
+    - Low: The query needs a review to improve
+
+Exercise 71
+Observations: --
+Pass: ✅
+Execution Time: 1125 ms
+Performance: Standard
+
+Exercise 72
+Observations: --
+Pass: ✅
+Execution Time: 1598 ms
+Performance: Standard
+
+Exercise 73
+Observations: --
+Pass: ✅
+Execution Time: 1429 ms
+Performance: Standard
+
+Exercise 74
+Observations: --
+Pass: ✅
+Execution Time: 1801 ms
+Performance: Top
+
+Exercise 75
+Observations: --
+Pass: ✅
+Execution Time: 1092 ms
+Performance: Standard
+
+Exercise 76
+Observations: --
+Pass: ✅
+Execution Time: 1113 ms
+Performance: Low
+
+Exercise 77
+Observations: --
+Pass:  ✅
+Execution Time: 912 ms
+Performance: Top
+
+Exercise 78
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Buses
+    | bus_id | arrival_time |
+    | ------ | ------------ |
+    | 683    | 719          |
+    | 578    | 395          |
+    | 603    | 396          |
+    | 121    | 322          |
+    | 534    | 208          |
+    | 476    | 646          |
+    | 30     | 638          |
+    | 344    | 975          |
+    | 50     | 306          |
+    | 688    | 926          |
+    | 356    | 629          |
+    | 692    | 854          |
+    | 318    | 206          |
+    | 582    | 822          |
+    | 289    | 228          |
+    | 742    | 409          |
+    | 38     | 613          |
+
+    Table: Passengers
+    | passenger_id | arrival_time |
+    | ------------ | ------------ |
+    | 981          | 202          |
+    | 949          | 843          |
+    | 615          | 773          |
+    | 984          | 833          |
+    | 1730         | 63           |
+    | 135          | 892          |
+    | 977          | 892          |
+    | 1057         | 101          |
+    | 1227         | 764          |
+    | 400          | 27           |
+    | 1590         | 361          |
+    | 792          | 626          |
+    | 1771         | 246          |
+    | 920          | 696          |
+    | 534          | 375          |
+    | 1728         | 767          |
+    | 976          | 183          |
+    | 735          | 520          |
+    | 1316         | 87           |
+    | 1091         | 680          |
+    | 1225         | 63           |
+    | 1459         | 243          |
+    | 1737         | 364          |
+    | 602          | 631          |
+    | 1001         | 226          |
+    | 1075         | 528          |
+    | 814          | 743          |
+    | 998          | 115          |
+    | 166          | 575          |
+    | 1436         | 288          |
+    | 484          | 145          |
+    | 1112         | 310          |
+    | 1236         | 316          |
+    | 1078         | 791          |
+
+Your Output:
+    | BUS_ID | PASSENGERS_CNT |
+    | ------ | -------------- |
+    | 30     | 23             |
+    | 742    | 0              |
+    | 692    | 0              |
+    | 534    | 0              |
+    | 121    | 0              |
+    | 356    | 0              |
+    | 289    | 0              |
+    | 344    | 11             |
+    | 578    | 0              |
+    | 688    | 0              |
+    | 38     | 0              |
+    | 318    | 0              |
+    | 603    | 0              |
+    | 50     | 0              |
+    | 683    | 0              |
+    | 476    | 0              |
+    | 582    | 0              |
+
+Expected Output:
+    | bus_id | passengers_cnt |
+    | ------ | -------------- |
+    | 30     | 1              |
+    | 38     | 3              |
+    | 50     | 3              |
+    | 121    | 2              |
+    | 289    | 1              |
+    | 318    | 9              |
+    | 344    | 0              |
+    | 356    | 1              |
+    | 476    | 0              |
+    | 534    | 0              |
+    | 578    | 3              |
+    | 582    | 5              |
+    | 603    | 0              |
+    | 683    | 2              |
+    | 688    | 2              |
+    | 692    | 2              |
+    | 742    | 0              |
+
+Exercise 79
+Observations: --
+Pass: ⛔
+Execution Time: --
+Performance: --
+
+Fail Test:
+Input Data:
+    Table: Data
+    | first_col | second_col |
+    | --------- | ---------- |
+    | 55        | 96         |
+    | 60        | 10         |
+    | 60        | 98         |
+    | 47        | 47         |
+    | 5         | 69         |
+    | 71        | 4          |
+
+Your Output:
+    | FIRST_COL | SECOND_COL |
+    | --------- | ---------- |
+    | 5         | 98         |
+    | 47        | 96         |
+    | 55        | 69         |
+    | 60        | 47         |
+    | 60        | 47         |
+    | 71        | 4          |
+
+Expected Output:
+    | first_col | second_col |
+    | --------- | ---------- |
+    | 5         | 98         |
+    | 47        | 96         |
+    | 55        | 69         |
+    | 60        | 47         |
+    | 60        | 10         |
+    | 71        | 4          |
+
+Exercise 80
+Observations: --
+Pass: ✅
+Execution Time: 1710 ms
+Performance: Standard
